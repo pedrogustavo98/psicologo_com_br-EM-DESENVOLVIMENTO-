@@ -1,5 +1,5 @@
 <?php
-require('../propostas/control/home.php');
+require('../psicologo_com_br_backoffice/control/home.php');
 
 $home = new Home();
 
@@ -16,18 +16,22 @@ switch ($_GET['modulo']) {
         switch ($_GET['action']) {
             case 'listar':
                 $home->listar();
+                // pre('aqui');
                 break;
-            // case 'cadastrar':
-            //     $home->cadastrar();
-            //     break;
+            case 'cadastrar':
+                $home->cadastrar();
+                break;
             case 'gerar':
                 $home->gerar();
+                // pre('aqui');
                 break;
             case 'enviar':
                 $home->enviar();
+                // pre('aqui');
                 break;
             default:
                 $home->listar();
+                // pre('aqui');
                 break;
         }
         break;

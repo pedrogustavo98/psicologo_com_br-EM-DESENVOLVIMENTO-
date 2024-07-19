@@ -1,4 +1,4 @@
-<?php require('../propostas/view/componentes/header.php') ?>
+<?php require('../psicologo_com_br_backoffice/view/componentes/header.php') ?>
 
 <div class="d-flex flex-column col-md-11">
     <h1>GERADOR DE PROPOSTAS</h1>
@@ -604,7 +604,7 @@
         </div>
     </div>
 </div>
-<?php require('../propostas/view/componentes/footer.php') ?>
+<?php require('../psicologo_com_br_backoffice/view/componentes/footer.php') ?>
 
 
 

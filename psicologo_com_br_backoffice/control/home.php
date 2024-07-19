@@ -9,12 +9,13 @@ class Home
 
     public function cadastrar()
     {
-        pre('aqui');
+        // pre('aqui');
     }
 
     public function listar()
     {
-        require('../propostas/view/home/listar.php');
+        // $teste = 1;
+        require('../psicologo_com_br_backoffice/view/home/listar.php');
     }
 
 
