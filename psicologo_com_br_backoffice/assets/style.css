@@ -91,3 +91,18 @@ table td{
 .invalid-form{
     border: 1px solid red;
 }
+
+.container-logo{
+    width: 200px;
+    height: 150px;
+    background-color: #833efe;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+
+.logo{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}

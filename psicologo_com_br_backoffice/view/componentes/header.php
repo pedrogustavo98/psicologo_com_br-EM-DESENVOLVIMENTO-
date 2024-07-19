@@ -28,13 +28,18 @@
 
     <div class="row m-0 p-0">
         <div class="d-flex col-md-12 m-0 p-0">
-            <div class="col-md-2 container-menu">
+            <div class="col-md-2 container-menu text-center">
+                <div class="container-logo shadow">
+                        <img src="/assets/imagens/logo.png"  class="logo">
+                </div>
                 <!-- teste 1 -->
+                 kkkk
             </div>
 
             <div class="d-flex w-100 flex-column">
                 <div class="tab-superior">
                     <!-- teste 2 -->
+                     
                 </div>
 
                 <div class="tab-conteudo d-flex justify-content-center align-items-start pt-5 h-100">
