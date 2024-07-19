@@ -1,11 +1,11 @@
 .container-menu{
     height: auto;
-    background-color: #00c3a5;
+    background-color: #00ab7e;
 }
 
 .tab-superior{
     height: 40px;
-    background-color: #00c3a5;
+    background-color: #00ab7e;
 }
 
 
@@ -18,9 +18,9 @@
 
 
 .tab-janela{
-    background-color: #00c3a5;
+    background-color: #00ab7e;
     border-radius: 5px 5px 0px 0px;
-    color: #1f1f1f;
+    color: #3df8c6;
     font-weight: bold;
 }
 
@@ -36,6 +36,7 @@
 h1{
     font-family:'Poppins';
     font-size: 30px;
+    color: #1f1f1f;
 }
 
 
