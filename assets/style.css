@@ -1,0 +1,93 @@
+.container-menu{
+    height: auto;
+    background-color: #00c3a5;
+}
+
+.tab-superior{
+    height: 40px;
+    background-color: #00c3a5;
+}
+
+
+.main-janela{
+    border-radius: 5px;
+    height: auto;
+    background-color: #ffffff;
+    margin-bottom: 35px!important;
+}
+
+
+.tab-janela{
+    background-color: #00c3a5;
+    border-radius: 5px 5px 0px 0px;
+    color: #1f1f1f;
+    font-weight: bold;
+}
+
+.tecnologias{
+    height: 150px;
+    resize: none;
+}
+
+.tab-conteudo{
+    background-color: #e9edf5;
+}
+
+h1{
+    font-family:'Poppins';
+    font-size: 30px;
+}
+
+
+.form-control {
+    border-radius: 0.55rem;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+    background-color: #F5F5F5 !important;
+    border: 1px solid #eeeeee !important;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(5, 56, 207, 0.25) !important;
+}
+
+.label-geral {
+    color: #000000;
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+span{
+    width: 80px;
+}
+
+.valor{
+    width: 120px;
+}
+
+table tr{
+    height: 50px;
+}
+
+table td{
+    width: 300px;
+}
+
+.urgente{
+    color: #833efe;
+}
+
+.aviso{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+.invalid-form{
+    border: 1px solid red;
+}
