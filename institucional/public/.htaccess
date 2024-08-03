@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Exceção para a pasta assets
+# RewriteCond %{REQUEST_URI} !^/assets/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule . /index.php [L]

@@ -1,0 +1,208 @@
+* {
+    font-family: poppins;
+}
+
+.carousel-inner {
+    height: 520px !important;
+}
+
+.container-setion {
+    width: 100%;
+    height: 300px;
+    background: #09738a;
+    border-bottom: 8px solid #092b5a;
+}
+
+.container-setion-convenio {
+    width: 100%;
+    height: 210px;
+    background: #09738a;
+    /* border-bottom: 8px solid #092b5a; */
+}
+
+.footer {
+    border-bottom: 2px solid #092b5aed;
+}
+
+.titulo-agenda {
+    color: #FFF;
+}
+
+.subtitulo {
+    color: #092b5a;
+}
+
+.container-agenda {
+    width: 500px;
+    color: #FFF;
+    text-align: center;
+    font-family: poppins;
+    font-size: 14px;
+}
+
+/* Define a altura do carrossel */
+.carousel-inner {
+    height: 520px;
+    /* Ajuste conforme necessário */
+}
+
+/* Garante que os itens do carrossel ocupem toda a altura definida */
+.carousel-item {
+    height: 100%;
+    /* Garante que a altura do item do carrossel seja a mesma do contêiner */
+}
+
+/* Ajusta as imagens dentro do carrossel */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Faz com que a imagem cubra o contêiner mantendo as proporções */
+}
+
+/* Estiliza os controles do carrossel */
+.carousel-control-prev,
+.carousel-control-next {
+    filter: invert(100%);
+    /* Ajuste a cor dos controles se necessário */
+}
+
+.container-fluid {
+    width: 80% !important;
+}
+
+.texteira {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100%;
+    background: #09738a;
+    color: #FFF;
+}
+
+.navbar {
+    height: 120px !important;
+}
+
+.container-geral {
+    width: 80% !important;
+}
+
+
+/* START ANIMAÇÃO */
+.container-card {
+    animation-duration: 3s;
+    animation-name: slidein;
+    width: 300px !important;
+    margin: 1%;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateX(100%);
+        width: 80%;
+    }
+
+    to {
+        transform: translateX(0%);
+        width: 80%;
+    }
+}
+
+.container-card-artigo {
+    animation-duration: 3s;
+    animation-name: artigo;
+    width: 300px !important;
+    margin: 1%;
+}
+
+@keyframes artigo {
+    from {
+        transform: translateX(-100%);
+        width: 0%;
+    }
+
+    to {
+        transform: translateX(0%);
+        width: 80%;
+
+    }
+}
+
+.quemsomos {
+    height: 220px;
+    width: 100%;
+    background-image: url('/assets/images/psicologos.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.paragraph-2 {
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    /* Define a altura fixa desejada */
+    object-fit: cover;
+    /* Faz com que a imagem se ajuste, cortando o excesso se necessário */
+}
+
+.btn-paragraph {
+    font-size: 14px;
+}
+
+
+
+.container-header>img {
+    height: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+
+.card-body {
+    min-height: 130px;
+}
+
+
+.input-padrao {
+    width: 200px;
+}
+
+
+.form-control {
+    border-radius: 0.55rem;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+    background-color: #F5F5F5 !important;
+    border: 1px solid #eeeeee !important;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(5, 56, 207, 0.25) !important;
+}
+
+.input-padrao-contato,
+.input-padrao-contato:focus,
+.input-padrao-contato::placeholder {
+    font-size: 14px;
+    border-radius: 7px;
+    color: #4D4F5C;
+    /* width: 200px; */
+}
+
+
+textarea{
+    height: 100px;
+}
+
+/* END ANIMAÇÃO
