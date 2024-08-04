@@ -10,7 +10,7 @@
 <div class="row m-0 p-0">
     <div class="col-md-12 p-0 m-0 d-flex flex-column align-items-center">
             <div class="col-md-12 m-5 d-flex container-geral">
-                <div class="container-card-artigo">
+                <div class="container-card-artigo" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="200" data-aos-easing="ease-in-out">
                     <div class="card m-2" style="width: 18rem;">
                         <img src="assets/images/amil.png" class="card-img-top" alt="...">
                         <div class="card-body text-center">
@@ -19,7 +19,7 @@
                     </div>
                 </div>
 
-                <div class="container-card-artigo">
+                <div class="container-card-artigo" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="450" data-aos-offset="200" data-aos-easing="ease-in-out">
                     <div class="card m-2" style="width: 18rem;">
                         <img src="assets/images/intermedica.png" class="card-img-top" alt="...">
                         <div class="card-body text-center">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
 
-                <div class="container-card-artigo">
+                <div class="container-card-artigo" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600" data-aos-offset="200" data-aos-easing="ease-in-out">
                     <div class="card m-2" style="width: 18rem;">
                         <img src="assets/images/unimed.jpg" class="card-img-top" alt="...">
                         <div class="card-body text-center">
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-card-artigo">
+                <div class="container-card-artigo" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="750" data-aos-offset="200" data-aos-easing="ease-in-out">
                     <div class="card m-2" style="width: 18rem;">
                         <img src="assets/images/biovida.png" class="card-img-top" alt="...">
                         <div class="card-body text-center">

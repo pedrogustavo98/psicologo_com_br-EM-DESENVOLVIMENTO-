@@ -13,12 +13,12 @@
         <div class="col-md-12 m-5 d-flex flex-column container-geral">
             <p class="paragraph mt-5">Fundada em 2015, dedica-se a conciliar dois aspectos da psicologia: a prática clínica com psicólogos dedicados a psicoterapia, com a interposição dos métodos clássicos e os atuais.</p>
             
-            <div class="container-header">
+            <div class="container-header" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="200" data-aos-easing="ease-in-out">
                 <img src="assets/images/psicologos.png" alt="" srcset="">
             </div>
 
 
-            <p class="paragraph mt-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure labore temporibus rem, explicabo assumenda recusandae, distinctio quas perspiciatis deserunt quia eius, alias quo nihil ullam voluptates? Et adipisci repellendus odio.
+            <p class="paragraph mt-5" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="200" data-aos-easing="ease-in-out">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure labore temporibus rem, explicabo assumenda recusandae, distinctio quas perspiciatis deserunt quia eius, alias quo nihil ullam voluptates? Et adipisci repellendus odio.
             Asperiores numquam, repellendus, consequatur velit aut nesciunt dicta reprehenderit nihil error accusantium rem optio voluptates iure eum fuga exercitationem ab tempora perferendis earum minus magni quidem. Vitae laborum fugit consectetur!
             Itaque, quam eum ad ea eaque aperiam asperiores esse sequi fuga iure tenetur id corporis suscipit soluta vel tempore est molestias minima possimus, enim similique adipisci quae pariatur consectetur! Esse?
             Ullam vero rerum eaque consequatur aperiam, veritatis dolorum aliquid illum dolor asperiores facere perferendis expedita tenetur laudantium. Numquam, illum? Eos ducimus quasi accusantium quo fugiat aliquam recusandae cum nobis quam.

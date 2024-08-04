@@ -57,7 +57,7 @@
             <div class="col-md-12 m-5 d-flex container-geral">
 
 
-                <div class="container-card">
+                <div class="container-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="200" data-aos-easing="ease-in-out">
                     <div class="card m-2" style="width: 18rem;">
                         <img src="/assets/images/elias.png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -68,7 +68,7 @@
                     </div>
                 </div>
 
-                <div class="container-card">
+                <div class="container-card" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="450" data-aos-offset="200" data-aos-easing="ease-in-out">
                     <div class="card m-2" style="width: 18rem;">
                         <img src="/assets/images/elias.png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -100,7 +100,7 @@
         <h4 class="subtitulo m-5">ARTIGOS</h1>
 
             <div class="col-md-12 m-5 d-flex container-geral">
-                <div class="container-card-artigo">
+                <div class="container-card-artigo" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="200" data-aos-easing="ease-in-out">
                     <div class="card m-2" style="width: 18rem;">
                         <img src="/assets/images/sindrome.jpeg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -111,7 +111,7 @@
                     </div>
                 </div>
 
-                <div class="container-card-artigo">
+                <div class="container-card-artigo" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="450" data-aos-offset="200" data-aos-easing="ease-in-out">
                     <div class="card m-2" style="width: 18rem;">
                         <img src="/assets/images/ansiedade.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -122,7 +122,7 @@
                     </div>
                 </div>
 
-                <div class="container-card-artigo">
+                <div class="container-card-artigo" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600" data-aos-offset="200" data-aos-easing="ease-in-out">
                     <div class="card m-2" style="width: 18rem;">
                         <img src="/assets/images/dependencia.png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-card-artigo">
+                <div class="container-card-artigo" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="750" data-aos-offset="200" data-aos-easing="ease-in-out">
                     <div class="card m-2" style="width: 18rem;">
                         <img src="/assets/images/dependencia.png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -148,6 +148,10 @@
     </div>
 </div>
 <div class="row m-0 p-0">
+    <!-- <div style="color: red;" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300" data-aos-offset="200" data-aos-easing="ease-in-out">
+        Este conteúdo tem uma animação personalizada.
+    </div> -->
+
     <div class="col-md-12 container-setion-convenio d-flex shadow flex-column align-items-center">
         <h1 class="titulo-agenda mt-5">CONVÊNIOS PARCEIROS</h1>
         <p class="container-agenda">A Clínica Bem Viver, atualmente atende convênios médicos, visando a saúde e bem estar de seus pacientes.</p>

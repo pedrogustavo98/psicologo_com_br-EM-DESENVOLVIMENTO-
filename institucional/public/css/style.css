@@ -91,7 +91,7 @@
 
 
 /* START ANIMAÇÃO */
-.container-card {
+/* .container-card {
     animation-duration: 3s;
     animation-name: slidein;
     width: 300px !important;
@@ -108,9 +108,9 @@
         transform: translateX(0%);
         width: 80%;
     }
-}
+} */
 
-.container-card-artigo {
+/* .container-card-artigo {
     animation-duration: 3s;
     animation-name: artigo;
     width: 300px !important;
@@ -128,7 +128,7 @@
         width: 80%;
 
     }
-}
+} */
 
 .quemsomos {
     height: 220px;
@@ -205,4 +205,20 @@ textarea{
     height: 100px;
 }
 
+/* @keyframes customAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-aos="custom-animation"] {
+  animation: customAnimation 1s forwards;
+} */
+
 /* END ANIMAÇÃO
+

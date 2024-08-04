@@ -1,4 +1,4 @@
-<div class="row m-0 p-0" style="background: #ebf2f2; border-top: 8px solid #092b5a;">
+<div class="row m-0 p-0" style="background: #ebf2f2; border-top: 8px solid #092b5a;" >
     <div class="col-md-12 p-5 justify-content-center d-flex">
         <div class="col-md-3">
             <div class="subtitulo footer text-uppercase" style="width: 36%">
@@ -72,3 +72,8 @@
 
 </html>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+        AOS.init();
+</script>
