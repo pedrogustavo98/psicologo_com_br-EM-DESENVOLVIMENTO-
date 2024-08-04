@@ -8,6 +8,7 @@ class Home{
     }
 
     public function start(){
+        $home = 'active';
         require('views/home/home.php');
     }
 }

@@ -20,6 +20,7 @@ $convenios = new Convenios($uri);
 $workshops = new Workshops($uri);
 $contato = new Contato($uri);
 
+// pre($uri);
 switch ($uri[0]) {
     case 'home':
         $home->start();

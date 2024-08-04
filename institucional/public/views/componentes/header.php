@@ -29,11 +29,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/home">Home</a>
-                    <a class="nav-link" href="/quem-somos">Quem somos</a>
-                    <a class="nav-link" href="/convenios">Convênios</a>
-                    <a class="nav-link" href="/workshops">Workshops</a>
-                    <a class="nav-link" href="/contato">Contato</a>
+                    <a class="nav-link <?php echo $home?>" aria-current="page" href="/home">Home</a>
+                    <a class="nav-link <?php echo $quemsomos?>" href="/quem-somos">Quem somos</a>
+                    <a class="nav-link <?php echo $convenio?>" href="/convenios">Convênios</a>
+                    <a class="nav-link <?php echo $workshops?>" href="/workshops">Workshops</a>
+                    <a class="nav-link <?php echo $contato?>" href="/contato">Contato</a>
                     <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
                 </div>
             </div>

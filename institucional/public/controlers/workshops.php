@@ -8,6 +8,8 @@ class Workshops
     }
 
     function start(){
+        $workshops = 'active';
+
         require('views/workshops/workshops.php');
     }
 }

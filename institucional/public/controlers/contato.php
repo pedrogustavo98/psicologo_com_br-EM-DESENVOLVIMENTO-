@@ -8,6 +8,7 @@ class Contato
     }
 
     function start(){
+        $contato = 'active';
         require('views/contato/contato.php');
 
     }

@@ -8,6 +8,7 @@ class QuemSomos
     }
 
     function start(){
+        $quemsomos = 'active';
         require('views/quemsomos/quemsomos.php');
     }
 }
