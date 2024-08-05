@@ -1,4 +1,5 @@
 <?php
+require_once('../public/define.php');
 require_once('controlers/home.php');
 require_once('controlers/contato.php');
 require_once('controlers/convenios.php');
@@ -20,7 +21,6 @@ $convenios = new Convenios($uri);
 $workshops = new Workshops($uri);
 $contato = new Contato($uri);
 
-// pre($uri);
 switch ($uri[0]) {
     case 'home':
         $home->start();

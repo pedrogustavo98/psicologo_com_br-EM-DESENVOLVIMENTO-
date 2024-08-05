@@ -10,6 +10,7 @@ class Convenios
     
     function start(){
         $convenio = 'active';
+        $pagina = 'Convênios | ';
         require('views/convenios/convenios.php');
 
     }

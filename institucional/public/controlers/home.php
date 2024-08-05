@@ -9,6 +9,8 @@ class Home{
 
     public function start(){
         $home = 'active';
+
+        // pre('aqui');
         require('views/home/home.php');
     }
 }

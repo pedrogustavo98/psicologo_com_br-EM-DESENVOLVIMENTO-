@@ -8,14 +8,14 @@
 </div>
 
 <div class="row m-0 p-0">
-    <div class="col-md-12 p-0 m-0 d-flex justify-content-end">
-        <div class="col-md-5 m-5 flex-column" style="height: 600px;">
+    <div class="container-formulario col-md-12 p-0 m-0 d-flex justify-content-end">
+        <div class="col-md-5 m-5 flex-column container-forms">
 
-            <h4 class="subtitulo m-5">
+            <h4 class="subtitulo m-5 legenda-subtitulo">
                 Entre em contato conosco através dos nossos canais de atendimento.
             </h4>
 
-            <div class="col-md-12 p-5">
+            <div class="col-md-12 p-5 container-telefones">
                 <div class="subtitulo footer text-uppercase" style="width: 23%">
                     contato
                 </div>
@@ -44,7 +44,7 @@
 
         </div>
 
-        <div class="col-md-5 m-5 d-flex flex-column" style="height: 600px; border: 1px solid #09738a;">
+        <div class="col-md-5 m-5 d-flex flex-column container-contato-form" >
             <div class="col-md-12 m-0 p-0" style="background: #09738a;">
                 <img src="/assets/images/contato.png" style="object-fit: cover; width: 100%;">
             </div>

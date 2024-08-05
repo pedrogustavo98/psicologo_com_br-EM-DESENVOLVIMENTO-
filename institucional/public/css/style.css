@@ -201,9 +201,156 @@
 }
 
 
-textarea{
+textarea {
     height: 100px;
 }
+
+
+
+.container-carrosel {
+    max-width: 100%;
+    /* Ajuste a largura máxima para o container do carrossel */
+    margin: auto;
+    /* Centralize o container */
+}
+
+.carousel-inner img {
+    width: 100%;
+    /* Assegure que as imagens ocupem toda a largura do item do carrossel */
+    height: auto;
+    /* Ajuste a altura automaticamente para manter a proporção */
+}
+
+.container-forms {
+    height: 600px;
+}
+
+.container-contato-form {
+    height: 600px;
+    border: 1px solid #09738a;
+}
+
+.menu-container{
+    background: white !important;
+}
+
+@media (max-width: 720px) {
+    .container-contato-form {
+        height: 650px;
+        border: none;
+        margin: 0!important;
+        padding: 20px;
+    }
+
+    #carouselExampleCaptions {
+        height: 150px;
+    }
+
+    .texteira {
+        height: 30vw;
+    }
+
+    .menu-container {
+        z-index: 999;
+        position: relative;
+    }
+
+    .navbar-nav {
+        background-color: white;
+        padding: 10px;
+    }
+
+    .container-carrosel {
+        height: 150px !important;
+    }
+
+    .carousel-inner img {
+        height: 150px;
+    }
+
+    .carousel-inner {
+        height: 150px !important;
+    }
+
+
+    .container-agenda {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .quemsomos {
+        height: auto;
+    }
+
+    .container-geral {
+        flex-direction: column;
+    }
+
+
+    .rodape {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100% !important;
+        margin: 0 !important;
+        margin-top: 5% !important;
+    }
+
+    .rodape {
+        padding: 5% !important;
+    }
+
+    .container-setion {
+        height: 340px;
+    }
+
+    .container-formulario {
+        flex-direction: column;
+    }
+
+    .menu-container{
+        background-color: #ffffff!important;
+    }
+
+
+    .container-telefones {
+        display: none;
+    }
+
+    .legenda-subtitulo {
+        margin: 0 !important;
+    }
+
+    .container-forms {
+        height: auto;
+    }
+}
+
+/* Estilo para dispositivos com largura máxima de 600px */
+/* @media (max-width: 720px) {
+    .texteira{
+        height: 30vw;
+    }
+
+    .menu-container{
+        z-index: 999;
+        position: relative;
+    }
+
+    .navbar-nav{
+        background-color: white;
+        padding: 10px;
+    }
+
+    .container-carrosel{
+        height: 100px!important;
+    }
+
+
+
+    
+  } */
 
 /* @keyframes customAnimation {
   from {
@@ -221,4 +368,3 @@ textarea{
 } */
 
 /* END ANIMAÇÃO
-

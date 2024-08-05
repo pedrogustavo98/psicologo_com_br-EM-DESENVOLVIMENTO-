@@ -9,6 +9,7 @@ class QuemSomos
 
     function start(){
         $quemsomos = 'active';
+        $pagina = 'Quem somos | ';
         require('views/quemsomos/quemsomos.php');
     }
 }

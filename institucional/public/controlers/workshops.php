@@ -9,6 +9,7 @@ class Workshops
 
     function start(){
         $workshops = 'active';
+        $pagina = 'Workshops | ';
 
         require('views/workshops/workshops.php');
     }
