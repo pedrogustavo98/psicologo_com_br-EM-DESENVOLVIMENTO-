@@ -17,7 +17,6 @@
     width: 100%;
     height: 210px;
     background: #09738a;
-    /* border-bottom: 8px solid #092b5a; */
 }
 
 .footer {
@@ -40,31 +39,23 @@
     font-size: 14px;
 }
 
-/* Define a altura do carrossel */
 .carousel-inner {
     height: 520px;
-    /* Ajuste conforme necessário */
 }
 
-/* Garante que os itens do carrossel ocupem toda a altura definida */
 .carousel-item {
     height: 100%;
-    /* Garante que a altura do item do carrossel seja a mesma do contêiner */
 }
 
-/* Ajusta as imagens dentro do carrossel */
 .carousel-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Faz com que a imagem cubra o contêiner mantendo as proporções */
 }
 
-/* Estiliza os controles do carrossel */
 .carousel-control-prev,
 .carousel-control-next {
     filter: invert(100%);
-    /* Ajuste a cor dos controles se necessário */
 }
 
 .container-fluid {
@@ -89,47 +80,6 @@
     width: 80% !important;
 }
 
-
-/* START ANIMAÇÃO */
-/* .container-card {
-    animation-duration: 3s;
-    animation-name: slidein;
-    width: 300px !important;
-    margin: 1%;
-}
-
-@keyframes slidein {
-    from {
-        transform: translateX(100%);
-        width: 80%;
-    }
-
-    to {
-        transform: translateX(0%);
-        width: 80%;
-    }
-} */
-
-/* .container-card-artigo {
-    animation-duration: 3s;
-    animation-name: artigo;
-    width: 300px !important;
-    margin: 1%;
-}
-
-@keyframes artigo {
-    from {
-        transform: translateX(-100%);
-        width: 0%;
-    }
-
-    to {
-        transform: translateX(0%);
-        width: 80%;
-
-    }
-} */
-
 .quemsomos {
     height: 220px;
     width: 100%;
@@ -147,9 +97,7 @@
 .card-img-top {
     width: 100%;
     height: 200px;
-    /* Define a altura fixa desejada */
     object-fit: cover;
-    /* Faz com que a imagem se ajuste, cortando o excesso se necessário */
 }
 
 .btn-paragraph {
@@ -197,7 +145,6 @@
     font-size: 14px;
     border-radius: 7px;
     color: #4D4F5C;
-    /* width: 200px; */
 }
 
 
@@ -205,20 +152,14 @@ textarea {
     height: 100px;
 }
 
-
-
 .container-carrosel {
     max-width: 100%;
-    /* Ajuste a largura máxima para o container do carrossel */
     margin: auto;
-    /* Centralize o container */
 }
 
 .carousel-inner img {
     width: 100%;
-    /* Assegure que as imagens ocupem toda a largura do item do carrossel */
     height: auto;
-    /* Ajuste a altura automaticamente para manter a proporção */
 }
 
 .container-forms {
@@ -326,45 +267,3 @@ textarea {
         height: auto;
     }
 }
-
-/* Estilo para dispositivos com largura máxima de 600px */
-/* @media (max-width: 720px) {
-    .texteira{
-        height: 30vw;
-    }
-
-    .menu-container{
-        z-index: 999;
-        position: relative;
-    }
-
-    .navbar-nav{
-        background-color: white;
-        padding: 10px;
-    }
-
-    .container-carrosel{
-        height: 100px!important;
-    }
-
-
-
-    
-  } */
-
-/* @keyframes customAnimation {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-[data-aos="custom-animation"] {
-  animation: customAnimation 1s forwards;
-} */
-
-/* END ANIMAÇÃO
