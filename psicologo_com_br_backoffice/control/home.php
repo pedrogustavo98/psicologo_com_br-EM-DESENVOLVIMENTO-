@@ -3,8 +3,12 @@ header('Content-Type: text/html; charset=utf-8');
 
 class Home
 {
-    public function __construct()
+    public $uri;
+
+    public function __construct($uri)
     {
+        $this->uri = $uri;
+
     }
 
     public function cadastrar()
@@ -14,6 +18,7 @@ class Home
 
     public function listar()
     {
+        // pre('aqui');
         // $teste = 1;
         require('../psicologo_com_br_backoffice/view/home/listar.php');
     }

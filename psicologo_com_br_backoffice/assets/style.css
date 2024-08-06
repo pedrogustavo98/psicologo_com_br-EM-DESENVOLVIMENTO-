@@ -1,40 +1,62 @@
-.container-menu{
-    height: auto;
+.container-menu {
+    height: 100vh;
     background-color: #00ab7e;
 }
 
-.tab-superior{
+.tab-superior {
     height: 40px;
     background-color: #00ab7e;
 }
 
 
-.main-janela{
+.main-janela {
     border-radius: 5px;
     height: auto;
     background-color: #ffffff;
-    margin-bottom: 35px!important;
+    margin-bottom: 35px !important;
 }
 
 
-.tab-janela{
-    background-color: #00ab7e;
+.tab-janela {
+    background-color: #082751;
     border-radius: 5px 5px 0px 0px;
-    color: #3df8c6;
+    color: #FFF;
     font-weight: bold;
 }
 
-.tecnologias{
+.btn {
+    display: flex;
+    align-items: center!important;
+    justify-content: center!important;
+}
+
+a{
+    /* width: 100%; */
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+a >.btn{
+    width: 100%;
+}
+
+.btn-titulo {
+    width: 100px;
+    height: 100%;
+}
+
+.tecnologias {
     height: 150px;
     resize: none;
 }
 
-.tab-conteudo{
+.tab-conteudo {
     background-color: #e9edf5;
 }
 
-h1{
-    font-family:'Poppins';
+h1 {
+    font-family: 'Poppins';
     font-size: 30px;
     color: #1f1f1f;
 }
@@ -63,37 +85,37 @@ h1{
 }
 
 
-span{
+span {
     width: 80px;
 }
 
-.valor{
+.valor {
     width: 120px;
 }
 
-table tr{
+table tr {
     height: 50px;
 }
 
-table td{
+table td {
     width: 300px;
 }
 
-.urgente{
+.urgente {
     color: #833efe;
 }
 
-.aviso{
+.aviso {
     font-weight: bold;
     font-size: 14px;
 }
 
 
-.invalid-form{
+.invalid-form {
     border: 1px solid red;
 }
 
-.container-logo{
+.container-logo {
     width: 200px;
     height: 150px;
     background-color: #833efe;
@@ -101,9 +123,25 @@ table td{
     margin: 10px auto;
 }
 
-.logo{
+.logo {
     object-fit: cover;
     width: 100%;
     height: 100%;
     border-radius: 10px;
+}
+
+.card-body-relatorios-restaurante {
+    flex: 1 1 auto;
+    height: 110px;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+.titulo-card {
+    display: flex !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    font-size: 18px !important;
+    color: #5C606C !important;
+    width: 100% !important;
 }

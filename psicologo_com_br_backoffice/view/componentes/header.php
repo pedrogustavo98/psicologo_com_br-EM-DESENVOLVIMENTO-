@@ -13,6 +13,8 @@
     <script src="/assets/jquery.mask.min.js"></script>
     <script src="/assets/jquery.maskMoney.min.js"></script>
     <script src="/assets/utils.js"></script>
+    <script src="https://kit.fontawesome.com/9be86484fd.js" crossorigin="anonymous"></script>
+
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
 
 
@@ -28,18 +30,58 @@
 
     <div class="row m-0 p-0">
         <div class="d-flex col-md-12 m-0 p-0">
-            <div class="col-md-2 container-menu text-center">
+            <div class="col-md-2 container-menu d-flex flex-column align-items-center">
                 <div class="container-logo shadow">
-                        <img src="/assets/imagens/logo.png"  class="logo">
+                    <img src="/assets/imagens/logo.png" class="logo">
                 </div>
                 <!-- teste 1 -->
-                 kkkk
+                <div class="col-md-10 d-flex flex-column">
+                    <a href="/home">
+                        <button class="btn btn-success m-1 d-flex justify-content-center"><i class="fa-solid fa-chart-line"></i>
+                            <div class="btn-titulo">Dashboard</div>
+                        </button>
+                    </a>
+
+                    <a href="/quem-somos">
+                        <button class="btn btn-success m-1 d-flex justify-content-center"><i class="fa-solid fa-landmark"></i>
+                            <div class="btn-titulo">Quem somos</div>
+                        </button>
+                    </a>
+                    <a href="/convenios">
+                        <button class="btn btn-success m-1 d-flex justify-content-center"><i class="fa-solid fa-handshake"></i>
+                            <div class="btn-titulo">Convênios</div>
+                        </button>
+                    </a>
+
+                    <a href="/workshops">
+                        <button class="btn btn-success m-1 d-flex justify-content-center"><i class="fa-brands fa-confluence"></i>
+                            <div class="btn-titulo">Workshops</div>
+                        </button>
+                    </a>
+
+                    <a href="/mensagens">
+                        <button class="btn btn-success m-1 d-flex justify-content-center">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div class="btn-titulo">Mensagens</div>
+                        </button>
+                    </a>
+
+
+                    <a href="/clinica">
+                        <button class="btn btn-success m-1 d-flex justify-content-center">
+                            <i class="fa-solid fa-address-card"></i>
+                            <div class="btn-titulo">
+                                Minha clínica
+                            </div>
+                        </button>
+                    </a>
+                </div>
             </div>
 
             <div class="d-flex w-100 flex-column">
                 <div class="tab-superior">
                     <!-- teste 2 -->
-                     
+
                 </div>
 
                 <div class="tab-conteudo d-flex justify-content-center align-items-start pt-5 h-100">

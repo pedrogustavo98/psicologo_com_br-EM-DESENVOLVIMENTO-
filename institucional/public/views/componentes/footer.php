@@ -1,4 +1,4 @@
-<div class="row m-0 p-0" style="background: #ebf2f2; border-top: 8px solid #092b5a;" >
+<div class="row m-0 p-0" style="background: #ebf2f2; border-top: 8px solid #D3D3D3;" >
     <div class="col-md-12 p-5 rodape justify-content-center d-flex">
         <div class="col-md-3">
             <div class="subtitulo footer text-uppercase" style="width: 36%">

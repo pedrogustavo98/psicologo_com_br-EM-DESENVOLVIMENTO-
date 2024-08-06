@@ -47,7 +47,7 @@
         <h1 class="titulo-agenda mt-5">AGENDE SUA CONSULTA</h1>
         <p class="container-agenda">A Clínica Bem Viver, atualmente atende a vários convênios médicos visando a saúde e o bem estar de seus pacientes. Nós contamos com excelentes profissionais, graduados e pós-graduados que estarão sempre disponíveis para agendamento, para que assim se possa dar início ou continuidade ao tratamento.</p>
 
-        <button class="btn btn-info text-uppercase">Clique aqui</button>
+        <button class="btn btn-light text-uppercase">Clique aqui</button>
     </div>
 </div>
 <div class="row m-0 p-0">
@@ -91,7 +91,7 @@
             </p>
 
         </div>
-        <button class="btn btn-info text-uppercase">Saiba mais</button>
+        <button class="btn btn-light text-uppercase">Saiba mais</button>
     </div>
 </div>
 

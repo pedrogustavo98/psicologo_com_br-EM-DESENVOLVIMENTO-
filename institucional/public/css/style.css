@@ -9,14 +9,14 @@
 .container-setion {
     width: 100%;
     height: 300px;
-    background: #09738a;
-    border-bottom: 8px solid #092b5a;
+    background: #00ab7e;
+    border-bottom: 8px solid #D3D3D3;
 }
 
 .container-setion-convenio {
     width: 100%;
     height: 210px;
-    background: #09738a;
+    background: #00ab7e;
 }
 
 .footer {
@@ -68,7 +68,7 @@
     justify-content: center;
     height: 40px;
     width: 100%;
-    background: #09738a;
+    background: #00ab7e;
     color: #FFF;
 }
 
@@ -168,7 +168,7 @@ textarea {
 
 .container-contato-form {
     height: 600px;
-    border: 1px solid #09738a;
+    border: 1px solid #00ab7e;
 }
 
 .menu-container{
