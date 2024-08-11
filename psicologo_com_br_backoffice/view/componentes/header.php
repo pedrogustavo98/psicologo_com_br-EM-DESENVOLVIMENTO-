@@ -15,15 +15,10 @@
     <script src="/assets/utils.js"></script>
     <script src="https://kit.fontawesome.com/9be86484fd.js" crossorigin="anonymous"></script>
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <title>Gerador de propostas</title>
+    <title>Admin</title>
 </head>
 
 <body>
@@ -36,31 +31,31 @@
                 </div>
                 <!-- teste 1 -->
                 <div class="col-md-10 d-flex flex-column">
-                    <a href="/home">
-                        <button class="btn btn-success m-1 d-flex justify-content-center"><i class="fa-solid fa-chart-line"></i>
+                    <a href="/dashboard">
+                        <button class="btn btn-primary m-1 d-flex justify-content-center <?php echo $dashboard ?>"><i class="fa-solid fa-chart-line"></i>
                             <div class="btn-titulo">Dashboard</div>
                         </button>
                     </a>
 
                     <a href="/quem-somos">
-                        <button class="btn btn-success m-1 d-flex justify-content-center"><i class="fa-solid fa-landmark"></i>
+                        <button class="btn btn-primary m-1 d-flex justify-content-center <?php echo $quemsomos ?>"><i class="fa-solid fa-landmark"></i>
                             <div class="btn-titulo">Quem somos</div>
                         </button>
                     </a>
-                    <a href="/convenios">
-                        <button class="btn btn-success m-1 d-flex justify-content-center"><i class="fa-solid fa-handshake"></i>
+                    <a href="/convenios/listar">
+                        <button class="btn btn-primary m-1 d-flex justify-content-center <?php echo $convenios ?>"><i class="fa-solid fa-handshake"></i>
                             <div class="btn-titulo">Convênios</div>
                         </button>
                     </a>
 
-                    <a href="/workshops">
-                        <button class="btn btn-success m-1 d-flex justify-content-center"><i class="fa-brands fa-confluence"></i>
+                    <a href="/workshops/listar">
+                        <button class="btn btn-primary m-1 d-flex justify-content-center <?php echo $workshops ?>"><i class="fa-brands fa-confluence"></i>
                             <div class="btn-titulo">Workshops</div>
                         </button>
                     </a>
 
                     <a href="/mensagens">
-                        <button class="btn btn-success m-1 d-flex justify-content-center">
+                        <button class="btn btn-primary m-1 d-flex justify-content-center <?php echo $mensagens ?>">
                             <i class="fa-solid fa-envelope"></i>
                             <div class="btn-titulo">Mensagens</div>
                         </button>
@@ -68,10 +63,26 @@
 
 
                     <a href="/clinica">
-                        <button class="btn btn-success m-1 d-flex justify-content-center">
+                        <button class="btn btn-primary m-1 d-flex justify-content-center <?php echo $clinica ?>">
                             <i class="fa-solid fa-address-card"></i>
                             <div class="btn-titulo">
                                 Minha clínica
+                            </div>
+                        </button>
+                    </a>
+                    <a href="/profissionais/listar">
+                        <button class="btn btn-primary m-1 d-flex justify-content-center <?php echo $profissionais ?>">
+                            <i class="fa-solid fa-users"></i>
+                            <div class="btn-titulo">
+                                Profissionais
+                            </div>
+                        </button>
+                    </a>
+                    <a href="/home/listar">
+                        <button class="btn btn-primary m-1 d-flex justify-content-center <?php echo $home ?>">
+                            <i class="fa-solid fa-house"></i>
+                            <div class="btn-titulo">
+                                Home
                             </div>
                         </button>
                     </a>
@@ -79,9 +90,21 @@
             </div>
 
             <div class="d-flex w-100 flex-column">
-                <div class="tab-superior">
+                <div class="tab-superior text-end p-3">
                     <!-- teste 2 -->
+                    <button onclick="sair()" class="h-100" style="background: none; border: none;">
+                        <i class="fas fa-angle-down"></i>
+                        <span style="font-weight: bold;"><?php echo $_SESSION['usuario']['nome'] . ' (' . $_SESSION['usuario']['tipo'] . ')' ?></span>
+                        <i class="fa-solid fa-circle-user fa-xl black-icon"></i>
+                    </button>
+                    <button id="btn-sair" class="btn btn-secondary" style="position: absolute; top: 50px; right: 35px; width: 185px;">
+                        <div class="d-flex align-items-center">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>SAIR</span>
+                        </div>
+                    </button>
 
                 </div>
 
-                <div class="tab-conteudo d-flex justify-content-center align-items-start pt-5 h-100">
+
+                <div class="d-flex justify-content-center align-items-start pt-5 h-100 shadow container-main">

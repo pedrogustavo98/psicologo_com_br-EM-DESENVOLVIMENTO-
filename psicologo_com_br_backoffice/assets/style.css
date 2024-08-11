@@ -1,11 +1,12 @@
 .container-menu {
-    height: 100vh;
-    background-color: #00ab7e;
+    min-height: 100vh;
+    background-color: #A8D5BA;
 }
 
 .tab-superior {
-    height: 40px;
-    background-color: #00ab7e;
+    /* height: 40px; */
+    height: 4.375rem;
+    background-color: #A8D5BA;
 }
 
 
@@ -16,6 +17,13 @@
     margin-bottom: 35px !important;
 }
 
+.white-icon {
+    color: white; /* Ajusta a cor do ícone para branco */
+}
+
+.container-main{
+    background: #F0F0F0;
+}
 
 .tab-janela {
     background-color: #082751;
@@ -37,6 +45,29 @@ a{
     text-decoration: none;
 }
 
+.btn-dark{
+    font-size: 15px;
+    /* font-weight: bold; */
+}
+
+textarea{
+    resize: none;
+    height: 150px;
+}
+
+
+.container-adicionar{
+    margin-left: auto;
+    margin-bottom: 15px;
+}
+
+
+.placeholderImage{
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+}
+
 a >.btn{
     width: 100%;
 }
@@ -53,6 +84,7 @@ a >.btn{
 
 .tab-conteudo {
     background-color: #e9edf5;
+    height: 100vh!important;
 }
 
 h1 {
@@ -82,6 +114,7 @@ h1 {
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
+    /* width: 100px; */
 }
 
 

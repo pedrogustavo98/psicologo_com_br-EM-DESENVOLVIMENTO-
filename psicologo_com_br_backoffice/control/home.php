@@ -14,12 +14,16 @@ class Home
     public function cadastrar()
     {
         // pre('aqui');
+        $home = 'active';
+
     }
 
-    public function listar()
+    public function start()
     {
         // pre('aqui');
         // $teste = 1;
+        $home = 'active';
+
         require('../psicologo_com_br_backoffice/view/home/listar.php');
     }
 

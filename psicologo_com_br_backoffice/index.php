@@ -1,7 +1,11 @@
 <?php
-require('../psicologo_com_br_backoffice/control/home.php');
-require('../psicologo_com_br_backoffice/control/dashboard.php');
 
+require('../psicologo_com_br_backoffice/importsModel.php');
+require('../psicologo_com_br_backoffice/importsController.php');
+require('../psicologo_com_br_backoffice/createModel.php');
+require('../psicologo_com_br_backoffice/createControl.php');
+
+session_start();
 
 function pre($valor)
 {
@@ -12,31 +16,76 @@ function pre($valor)
 
 $uri = explode('/', substr($_SERVER['REQUEST_URI'], '1'));
 
-$home = new Home($uri);
-$dashboard = new Dashboard($uri);
-// $quemsomos = new QuemSomos($uri);
-// $convenios = new Convenios($uri);
-// $mensagens = new Mensagens($uri);
-
 
 switch ($uri[0]) {
     case 'home':
-        $home->listar();
+        $home->start();
         break;
     case 'dashboard':
         $dashboard->start();
         break;
     case 'quem-somos':
-        // $quemsomos->start();
+        if ($uri[1] == 'salvar') {
+            $quemsomos->salvar();
+        }
+
+        $quemsomos->start();
         break;
     case 'convenios':
-        // $convenios->start();
+        switch ($uri[1]) {
+            case 'listar':
+                $convenios->start();
+                break;
+            case 'cadastrar':
+                $convenios->cadastrar();
+                break;
+            case 'ver':
+                $convenios->ver();
+                break;
+        }
+        break;
+    case 'workshops':
+        switch ($uri[1]) {
+            case 'listar':
+                $workshops->start();
+                break;
+            case 'cadastrar':
+                $workshops->cadastrar();
+                break;
+            case 'ver':
+                $workshops->ver();
+                break;
+        }
+        break;
+    case 'profissionais':
+        switch ($uri[1]) {
+            case 'listar':
+                $profissionais->start();
+                break;
+            case 'cadastrar':
+                $profissionais->cadastrar();
+                break;
+            case 'ver':
+                $profissionais->ver();
+                break;
+        }
         break;
     case 'mensagens':
-        // $mensagens->start();
+        $mensagens->start();
         break;
     case 'clinica':
-        // $clinica->start();
+        $minhaClinica->start();
+        break;
+    case 'restrito':
+
+        if ($uri[1] == 'login') {
+            $restrito->login();
+        }
+        if ($uri[1] == 'logout') {
+            $restrito->logout();
+        }
+
+        $restrito->start();
         break;
     default:
         $dashboard->start();

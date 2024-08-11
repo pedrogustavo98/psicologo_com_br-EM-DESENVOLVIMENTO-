@@ -1,28 +1,34 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
-class MinhaClinica
+class Convenios
 {
     public $uri;
 
     public function __construct($uri)
     {
         $this->uri = $uri;
-
     }
 
     public function cadastrar()
     {
-        // pre('aqui');
-        $clinica = "active";
+        $convenios = 'active';
+
+        require('../psicologo_com_br_backoffice/view/convenios/cadastrar.php');
+    }
+
+    public function ver()
+    {
+        $convenios = 'active';
+
+        require('../psicologo_com_br_backoffice/view/convenios/ver.php');
     }
 
     public function start()
     {
-        // pre('aqui');
-        // $teste = 1;
-        $clinica = "active";
-        require('../psicologo_com_br_backoffice/view/home/listar.php');
+        $convenios = 'active';
+
+        require('../psicologo_com_br_backoffice/view/convenios/listar.php');
     }
 
 

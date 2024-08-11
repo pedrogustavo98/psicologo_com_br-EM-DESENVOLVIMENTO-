@@ -1,0 +1,13 @@
+<?php
+require('../psicologo_com_br_backoffice/control/convenios.php');
+require('../psicologo_com_br_backoffice/control/dashboard.php');
+require('../psicologo_com_br_backoffice/control/home.php');
+require('../psicologo_com_br_backoffice/control/mensagens.php');
+require('../psicologo_com_br_backoffice/control/minhaclinica.php');
+require('../psicologo_com_br_backoffice/control/profissionais.php');
+require('../psicologo_com_br_backoffice/control/quemsomos.php');
+require('../psicologo_com_br_backoffice/control/workshops.php');
+require('../psicologo_com_br_backoffice/control/restrito.php');
+require('../psicologo_com_br_backoffice/model/core.php');
+require('../psicologo_com_br_backoffice/model/db.php');
+require('../psicologo_com_br_backoffice/define.php');
