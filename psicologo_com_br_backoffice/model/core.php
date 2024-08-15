@@ -32,7 +32,7 @@ class Core
         $table .= '</thead>';
 
         foreach ($dados as $key => $dado) {
-            $dado['acao'] = "<a href='$link$dado[id]'><button class='btn btn-primary'>$nome</button></a>";
+            $dado['acao'] = "<a href='$link$dado[id]' class='d-flex justify-content-center'><button class='btn btn-primary btn-ver'>$nome</button></a>";
             $table .= '<tr>';
             foreach ($dado as $chave => $tipoDado) {
                 $table .= '<td>' . $tipoDado . '</td>';

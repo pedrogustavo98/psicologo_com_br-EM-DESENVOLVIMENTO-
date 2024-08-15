@@ -47,7 +47,7 @@
     </div>
 
 
-    <div class="col-md-12 shadow main-janela p-5 pt-0">
+    <div class="col-md-12 shadow main-janela">
         <?php echo $tabela ?>
 
     </div>

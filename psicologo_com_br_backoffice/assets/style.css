@@ -178,3 +178,19 @@ table td {
     color: #5C606C !important;
     width: 100% !important;
 }
+
+thead{
+    background-color: #081f4e;
+}
+
+th{
+    color: #FFF;
+}
+
+td, th{
+    text-align: center;
+}
+
+.btn-ver{
+    width: 120px!important;
+}
