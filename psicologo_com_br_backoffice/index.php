@@ -66,7 +66,7 @@ switch ($uri[0]) {
                 $profissionais->cadastrar();
                 break;
             case 'ver':
-                $profissionais->ver();
+                $profissionais->ver($uri[2]);
                 break;
             case 'salvar':
                 $profissionais->salvar();

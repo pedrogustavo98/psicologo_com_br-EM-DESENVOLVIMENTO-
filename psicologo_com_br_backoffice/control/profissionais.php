@@ -22,10 +22,11 @@ class Profissionais
         require('../psicologo_com_br_backoffice/view/profissionais/cadastrar.php');
     }
 
-    public function ver()
+    public function ver($id)
     {
-        // pre('aqui');
         $profissionais = 'btn-light';
+        $profissional = $this->profissionaisModel->buscarProfissionalPorId($id);
+        $resultado = $profissional->fetchAll(PDO::FETCH_ASSOC)[0];
 
         require('../psicologo_com_br_backoffice/view/profissionais/ver.php');
     }

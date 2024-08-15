@@ -42,15 +42,15 @@
                         <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: Anderson Silva" name="nome" id="nome">
                     </div>
                     <div class="col-md-3 mt-5">
-                        <label class="label-geral" for="nome">Email*</label>
+                        <label class="label-geral" for="email">Email*</label>
                         <input type="text" class="form-control required required" placeholder="Ex.: anderson@email.com" name="email" id="email">
                     </div>
                     <div class="col-md-3 mt-5">
-                        <label class="label-geral" for="nome">Número de registro*</label>
+                        <label class="label-geral" for="registro">Número de registro*</label>
                         <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: CRP 00/000000 - UF" name="registro" id="registro">
                     </div>
                     <div class="col-md-3 mt-5">
-                        <label class="label-geral" for="nome">Tipo*</label>
+                        <label class="label-geral" for="tipo">Tipo*</label>
                         <select class="form-control" name="tipo" id="tipo">
                             <option value="Master">Master</option>
                             <option value="Convidado">Convidado</option>

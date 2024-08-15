@@ -15,6 +15,15 @@ class ProfissionaisModel
 
         return $stmt;
     }
+
+    public function buscarProfissionalPorId($id)
+    {
+        $query = "SELECT * FROM profissionais WHERE id = $id";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+
+        return $stmt;
+    }
     
     public function buscarTodosProfissionais()
     {
