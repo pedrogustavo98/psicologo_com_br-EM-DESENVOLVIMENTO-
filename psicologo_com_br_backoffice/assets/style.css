@@ -205,3 +205,8 @@ img{
     height: 100%;
     object-fit: cover;
 }
+
+
+#complemento::placeholder, #uf::placeholder{
+    text-transform: capitalize;
+}

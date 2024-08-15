@@ -294,6 +294,11 @@ function validateSenha(element1, element2) {
     return errors;
 }
 
+function removerTraco(telefone) {
+    // Substitui todos os traços por uma string vazia
+    return telefone.replace(/-/g, '');
+}
+
 function validateCpf(element) {
     cpf = $('#' + element).val();
     cpf = cpf.replace(/[^0-9]/g, '');

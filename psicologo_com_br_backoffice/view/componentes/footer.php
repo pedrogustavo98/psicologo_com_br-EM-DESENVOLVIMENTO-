@@ -8,7 +8,9 @@
 </body>
 
 </html>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/assets/jquery.mask.min.js"></script>
+<script src="/assets/jquery.maskMoney.min.js"></script>
 <script src="/assets/utils.js"></script>
 
 <script>

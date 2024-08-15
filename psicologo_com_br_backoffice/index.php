@@ -80,6 +80,11 @@ switch ($uri[0]) {
         $mensagens->start();
         break;
     case 'clinica':
+        if ($uri[1] == 'alterar') {
+            $minhaClinica->alterar();
+            return;
+        }
+
         $minhaClinica->start();
         break;
     case 'restrito':

@@ -4,14 +4,6 @@
 
     <div class="d-flex">
         <h1>MINHA CLÍNICA</h1>
-
-
-        <div class="container-adicionar">
-            <a href="/convenios/listar">
-                <button class="btn btn-dark botao-adicionar">Voltar</button>
-            </a>
-        </div>
-
     </div>
 
     <div class="col-md-12 m-0 p-0 main-janela shadow">
@@ -28,66 +20,57 @@
 
                     <h5>Dados da clínica</h5>
 
-                    <!-- <div class="col-md-12">
-                        <img src="https://placehold.jp/220x220.png">
-                    </div> -->
 
-
-
-                    <!-- <div class="col-md-12 mt-5">
-                        <label class="label-geral" for="nome">Nome do convênio*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: Anderson Silva" name="nome" id="nome">
-                    </div> -->
                     <div class="col-md-5 mt-5">
-                        <label class="label-geral" for="nome">E-mail*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: Anderson Silva" name="nome" id="nome">
+                        <label class="label-geral" for="email">E-mail*</label>
+                        <input type="text" value="<?php echo $resultado['email'] ?>" disabled class="form-control required" placeholder="Ex.: anderson@email.com" name="email" id="email">
                     </div>
                     <div class="col-md-3 mt-5">
-                        <label class="label-geral" for="nome">WhatsApp*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: Anderson Silva" name="nome" id="nome">
+                        <label class="label-geral" for="whatsapp">WhatsApp*</label>
+                        <input type="text" value="<?php echo $resultado['whatsapp'] ?>" disabled class="form-control mask-telcel required text-capitalize" placeholder="Ex.: (99) 99999-9999" name="whatsapp" id="whatsapp">
                     </div>
                     <div class="col-md-3 mt-5">
-                        <label class="label-geral" for="nome">Telefone*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: Anderson Silva" name="nome" id="nome">
+                        <label class="label-geral" for="telefone">Telefone*</label>
+                        <input type="text" value="<?php echo $resultado['telefone'] ?>" disabled class="form-control mask-telcel required text-capitalize" placeholder="Ex.: (99) 99999-9999" name="telefone" id="telefone">
                     </div>
-                    <div class="col-md-3 mt-5">
-                        <label class="label-geral" for="nome">Facebook*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: Anderson Silva" name="nome" id="nome">
+                    <div class="col-md-6 mt-5">
+                        <label class="label-geral" for="facebook">Facebook*</label>
+                        <input type="text" value="<?php echo $resultado['facebook'] ?>" disabled class="form-control required" placeholder="Ex.: https://facebook.com.br/profile/" name="facebook" id="facebook">
                     </div>
-                    <div class="col-md-3 mt-5">
-                        <label class="label-geral" for="nome">Instagram*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: Anderson Silva" name="nome" id="nome">
+                    <div class="col-md-6 mt-5">
+                        <label class="label-geral" for="instagram">Instagram*</label>
+                        <input type="text" value="<?php echo $resultado['instagram'] ?>" disabled class="form-control required" placeholder="Ex.: https://instagram.com.br/profile/" name="instagram" id="instagram">
                     </div>
 
                     <h5 class="mt-5">Endereço da clínica</h5>
 
                     <div class="col-md-3 mt-5">
                         <label class="label-geral" for="cep">Cep*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: 00000-000" name="cep" id="cep">
+                        <input type="text" value="<?php echo $resultado['cep'] ?>" disabled class="form-control mask-cep required" placeholder="Ex.: 00000-000" name="cep" id="cep">
                     </div>
                     <div class="col-md-5 mt-5">
                         <label class="label-geral" for="rua">Endereço*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: Rua da alegria" name="rua" id="rua">
+                        <input type="text" value="<?php echo $resultado['logradouro'] ?>" disabled class="form-control required text-capitalize" placeholder="Ex.: Rua da alegria" name="rua" id="rua">
                     </div>
                     <div class="col-md-3 mt-5">
                         <label class="label-geral" for="numero">Número*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: 99" name="numero" id="numero">
+                        <input type="text" value="<?php echo $resultado['numero'] ?>" disabled class="form-control required" placeholder="Ex.: 99" name="numero" id="numero">
                     </div>
                     <div class="col-md-3 mt-5">
                         <label class="label-geral" for="complemento">Complemento*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: Casa 1" name="complemento" id="complemento">
+                        <input type="text" value="<?php echo $resultado['complemento'] ?>" disabled class="form-control required text-uppercase" placeholder="Ex.: Casa 1" name="complemento" id="complemento">
                     </div>
                     <div class="col-md-3 mt-5">
                         <label class="label-geral" for="bairro">Bairro*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: Centro" name="bairro" id="bairro">
+                        <input type="text" value="<?php echo $resultado['bairro'] ?>" disabled class="form-control required text-capitalize" placeholder="Ex.: Centro" name="bairro" id="bairro">
                     </div>
                     <div class="col-md-3 mt-5">
                         <label class="label-geral" for="cidade">Cidade*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: Centro" name="cidade" id="cidade">
+                        <input type="text" value="<?php echo $resultado['cidade'] ?>" disabled class="form-control required text-capitalize" placeholder="Ex.: São Paulo" name="cidade" id="cidade">
                     </div>
                     <div class="col-md-2 mt-5">
                         <label class="label-geral" for="uf">UF*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: Centro" name="uf" id="uf">
+                        <input type="text" value="<?php echo $resultado['estado'] ?>" disabled class="form-control required text-uppercase" placeholder="Ex.: SP" name="uf" id="uf">
                     </div>
 
                 </div>
@@ -95,7 +78,8 @@
 
 
             <div class="col-md-12 m-3 p-3 d-flex justify-content-end">
-                <button type="button" id="btn-gerar" class="btn btn-dark">Cadastrar</button>
+                <button type="button" id="btn-alterar" class="btn btn-dark">alterar</button>
+                <button type="button" id="btn-salvar" class="btn btn-dark">salvar</button>
             </div>
 
 
@@ -110,133 +94,37 @@
 
 
 <script>
-    $('#container-sv-app').hide();
-    $('#container-sv-site').hide();
-    $('#container-sv-pwa').hide();
-    $('#container-sv-painel').hide();
-    $('#container-investimento-pwa').hide();
-    $('#container-investimento-site').hide();
-    $('#container-investimento-app').hide();
+    $('#btn-salvar').hide();
 
-    $('#funcionalidade-app').hide();
-    $('#funcionalidade-site').hide();
-    $('#funcionalidade-pwa').hide();
-    $('#funcionalidade-painel').hide();
-    $('#tecnologia-app').hide();
-    $('#tecnologia-site').hide();
-    $('#tecnologia-pwa').hide();
-    $('#tecnologia-painel').hide();
+    $('#btn-alterar').on('click', function() {
+        $('#btn-alterar').hide();
+        $('#btn-salvar').show();
+        $('input').removeAttr('disabled');
+    });
 
-
-
-    $('#sv-app').on('change', function() {
-        dado = $('#sv-app');
-
-        $('#container-sv-app').hide();
-        $('#container-investimento-app').hide();
-        $('#funcionalidade-app').hide();
-        $('#tecnologia-app').hide();
-        validarCamposSV('app', 'delete');
-
-
-        if (dado[0].checked) {
-            $('#container-sv-app').show();
-            $('#container-investimento-app').show();
-            $('#funcionalidade-app').show();
-            $('#tecnologia-app').show();
-            validarCamposSV('app', 'add');
-
-        }
-    })
-
-
-    $('#sv-site').on('change', function() {
-        dado = $('#sv-site');
-
-        $('#container-sv-site').hide();
-        $('#container-investimento-site').hide();
-        $('#funcionalidade-site').hide();
-        $('#tecnologia-site').hide();
-
-        validarCamposSV('site', 'delete');
-
-
-        if (dado[0].checked) {
-            $('#container-sv-site').show();
-            $('#container-investimento-site').show();
-            $('#funcionalidade-site').show();
-            $('#tecnologia-site').show();
-            validarCamposSV('site', 'add');
-        }
-    })
-
-
-    $('#sv-pwa').on('change', function() {
-        dado = $('#sv-pwa');
-
-        $('#container-sv-pwa').hide();
-        $('#container-investimento-pwa').hide();
-        $('#funcionalidade-pwa').hide();
-        $('#tecnologia-pwa').hide();
-        validarCamposSV('pwa', 'delete')
-
-        if (dado[0].checked) {
-            $('#container-sv-pwa').show();
-            $('#container-investimento-pwa').show();
-            $('#funcionalidade-pwa').show();
-            $('#tecnologia-pwa').show();
-            validarCamposSV('pwa', 'add')
-        }
-    })
-
-    $('#sv-painel').on('change', function() {
-        dado = $('#sv-painel');
-
-        $('#container-sv-painel').hide();
-        $('#container-investimento-painel').hide();
-        $('#funcionalidade-painel').hide();
-        $('#tecnologia-painel').hide();
-
-
-        validarCamposSV('painel', 'delete')
-
-
-        if (dado[0].checked) {
-            $('#container-sv-painel').show();
-            $('#container-investimento-painel').show();
-            $('#funcionalidade-painel').show();
-            $('#tecnologia-painel').show();
-
-            validarCamposSV('painel', 'add')
-        }
-    })
-
-
-
-    $('#btn-gerar').on('click', function(e) {
+    $('#btn-salvar').on('click', function(e) {
         e.preventDefault();
 
-        // var errors = 0;
+        var errors = 0;
 
-        // $('.required').each(function(index, element) {
-        //     errors += validateEmpty(element.id);
-        //     // console.log(errors);
-        // });
+        $('.required').each(function(index, element) {
+            errors += validateEmpty(element.id);
+        });
 
 
-        // if (errors > 0) {
-        //     Swal.fire({
-        //         title: 'Oops!',
-        //         text: 'Por favor, preencha os campos obrigatórios!',
-        //         icon: 'error'
-        //     });
+        if (errors > 0) {
+            Swal.fire({
+                title: 'Oops!',
+                text: 'Por favor, preencha os campos obrigatórios!',
+                icon: 'error'
+            });
 
-        //     return;
-        // }
+            return;
+        }
 
 
         $.ajax({
-            url: '/?modulo=home&action=enviar', // URL do arquivo PHP que processará a requisição
+            url: '/clinica/alterar', // URL do arquivo PHP que processará a requisição
             type: 'POST',
             async: false,
             cache: false,
@@ -248,58 +136,11 @@
                 let dado = response;
 
                 Swal.fire({
-                    title: response.title,
-                    text: response.message,
+                    title: response.titulo,
+                    text: response.mensagem,
                     icon: response.status
-                }).then(() => {
-                    if (response.status == 'success') {
-                        $.ajax({
-                            url: '/?modulo=home&action=gerar', // URL do arquivo PHP que processará a requisição
-                            type: 'POST',
-                            async: false,
-                            cache: false,
-                            contentType: false,
-                            processData: false,
-                            dataType: 'html',
-                            data: new FormData(document.getElementById('form-gerar')),
-                            success: function(response) {
-                                console.log(response);
-
-                                setTimeout(() => {
-                                    const opt = {
-                                        // margin: [0, 0, 10, 0], // Margens em mm [topo, esquerda, baixo, direita]
-                                        filename: 'document.pdf',
-                                        image: {
-                                            type: 'jpeg',
-                                            quality: 0.98
-                                        },
-                                        html2canvas: {
-                                            scale: 2,
-                                            logging: true,
-                                            dpi: 192,
-                                            letterRendering: true
-                                        },
-                                        jsPDF: {
-                                            unit: 'mm',
-                                            format: 'a4',
-                                            orientation: 'portrait'
-                                        },
-                                        pagebreak: {
-                                            mode: ['css', 'legacy'],
-                                            before: '.break-before',
-                                            after: '.break-after'
-                                        }
-                                    };
-
-                                    // Use html2pdf para gerar o PDF com as opções especificadas
-                                    html2pdf().from(response).set(opt).save();
-                                }, 500);
-
-
-
-                            }
-                        });
-                    }
+                }).then((result) => {
+                    location.reload();
                 });
             },
             error: function(xhr, status, error) { // Função de callback para erros
@@ -309,4 +150,31 @@
     });
 
 
+
+    $('#cep').on('change', function() {
+        let cep = $('#cep').val();
+
+
+        cep = removerTraco(cep);
+
+        $.ajax({
+            url: `https://viacep.com.br/ws/${cep}/json/`,
+            method: 'GET',
+            dataType: 'json',
+            success: function(response) { // Função de callback para o sucesso da requisição
+                let dado = response;
+               
+                if(!dado.erro){
+                    $('#bairro').val(dado.bairro);
+                    $('#cidade').val(dado.localidade);
+                    $('#uf').val(dado.uf);
+                    $('#rua').val(dado.logradouro);
+                }
+
+            },
+            error: function(xhr, status, error) { // Função de callback para erros
+                console.error('Erro na requisição AJAX:', error);
+            }
+        });
+    });
 </script>
