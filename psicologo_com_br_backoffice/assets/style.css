@@ -1,12 +1,12 @@
 .container-menu {
     min-height: 100vh;
-    background-color: #A8D5BA;
+    background-color: #081f4e;
 }
 
 .tab-superior {
     /* height: 40px; */
     height: 4.375rem;
-    background-color: #A8D5BA;
+    background-color: #081f4e;
 }
 
 
@@ -73,7 +73,7 @@ a >.btn{
 }
 
 .btn-titulo {
-    width: 100px;
+    width: 120px;
     height: 100%;
 }
 

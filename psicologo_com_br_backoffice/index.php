@@ -68,6 +68,9 @@ switch ($uri[0]) {
             case 'ver':
                 $profissionais->ver();
                 break;
+            case 'salvar':
+                $profissionais->salvar();
+                break;
         }
         break;
     case 'mensagens':
@@ -86,6 +89,10 @@ switch ($uri[0]) {
         }
 
         $restrito->start();
+        break;
+    case 'perfil':
+
+        $perfil->start();
         break;
     default:
         $dashboard->start();

@@ -13,14 +13,14 @@ class Mensagens
     public function cadastrar()
     {
         // pre('aqui');
-        $mensagens = 'active';
+        $mensagens = 'btn-light';
     }
 
     public function start()
     {
         // pre('aqui');
         // $teste = 1;
-        $mensagens = 'active';
+        $mensagens = 'btn-light';
 
         require('../psicologo_com_br_backoffice/view/home/listar.php');
     }

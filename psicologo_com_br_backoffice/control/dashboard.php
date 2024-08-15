@@ -13,7 +13,7 @@ class Dashboard
     public function start()
     {
         // pre($_SESSION);
-        $dashboard = 'active';
+        $dashboard = 'btn-light';
         require('../psicologo_com_br_backoffice/view/dashboard/dashboard.php');
     }
 }

@@ -17,7 +17,8 @@ class QuemSomos
 
     public function start()
     {
-        $quemsomos = 'active';
+        // pre($_SESSION);
+        $quemsomos = 'btn-light';
         // pre('aqui');
         // $teste = 1;
         require('../psicologo_com_br_backoffice/view/quemsomos/start.php');
@@ -25,7 +26,7 @@ class QuemSomos
 
     public function salvar()
     {
-        $quemsomos = 'active';
+        $quemsomos = 'btn-light';
 
         // $teste = 1;
         // require('../psicologo_com_br_backoffice/view/quemsomos/start.php');

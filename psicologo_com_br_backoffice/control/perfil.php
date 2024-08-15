@@ -1,67 +1,49 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
-class Profissionais
+class Perfil
 {
     public $uri;
-    public $profissionaisModel;
-    public $core;
 
-    public function __construct($uri, $profissionaisModel, $core)
+    public function __construct($uri)
     {
         $this->uri = $uri;
-        $this->profissionaisModel = $profissionaisModel;
-        $this->core = $core;
     }
 
     public function cadastrar()
     {
         // pre('aqui');
-        $profissionais = 'btn-light';
+        $perfil = 'btn-light';
 
-        require('../psicologo_com_br_backoffice/view/profissionais/cadastrar.php');
+        require('../psicologo_com_br_backoffice/view/workshops/cadastrar.php');
     }
 
     public function ver()
     {
         // pre('aqui');
-        $profissionais = 'btn-light';
+        $perfil = 'btn-light';
 
-        require('../psicologo_com_br_backoffice/view/profissionais/ver.php');
+        require('../psicologo_com_br_backoffice/view/workshops/ver.php');
     }
 
     public function start()
     {
 
-        $profissionais = 'btn-light';
-        $profissional = $this->profissionaisModel->buscarTodosProfissionais($_POST['nome'], $_POST['email'], $_POST['registro']);
-        $resultado = $profissional->fetchAll(PDO::FETCH_ASSOC);
+        // pre('aqui');
+        // $teste = 1;
+        $perfil = 'btn-light';
 
-
-        $tabela = $this->core->tabela($resultado, 'ID, PROFISSIONAL, E-MAIL, REGISTRO, AÇÃO', '/profissionais/ver/', 'Ver');
-
-        require('../psicologo_com_br_backoffice/view/profissionais/listar.php');
+        require('../psicologo_com_br_backoffice/view/workshops/listar.php');
     }
-
-    public function salvar()
+    
+    public function login()
     {
 
+        // pre('aqui');
+        // $teste = 1;
+        $workshops = 'btn-light';
 
-        $profissionais = 'btn-light';
-        $profissional = $this->profissionaisModel->buscarProfissional($_POST['email'], $_POST['registro']);
-        $resultado = $profissional->fetchAll(PDO::FETCH_ASSOC);
-
-        if ($resultado[0]) {
-            $this->core->return('error', 'Oops!', 'Já existe um profissional com o email ou número de registro cadastrado.');
-        }
-
-
-        $salvarProfissional = $this->profissionaisModel->salvarProfissional($_POST);
-
-        $this->core->return('success', 'Oba!', 'Profissional salvo com sucesso!');
-
-
-        require('../psicologo_com_br_backoffice/view/profissionais/listar.php');
+        require('../psicologo_com_br_backoffice/view/workshops/listar.php');
     }
 
 

@@ -9,5 +9,6 @@ require('../psicologo_com_br_backoffice/control/quemsomos.php');
 require('../psicologo_com_br_backoffice/control/workshops.php');
 require('../psicologo_com_br_backoffice/control/restrito.php');
 require('../psicologo_com_br_backoffice/model/core.php');
+require('../psicologo_com_br_backoffice/control/perfil.php');
 require('../psicologo_com_br_backoffice/model/db.php');
 require('../psicologo_com_br_backoffice/define.php');

@@ -12,21 +12,21 @@ class Convenios
 
     public function cadastrar()
     {
-        $convenios = 'active';
+        $convenios = 'btn-light';
 
         require('../psicologo_com_br_backoffice/view/convenios/cadastrar.php');
     }
 
     public function ver()
     {
-        $convenios = 'active';
+        $convenios = 'btn-light';
 
         require('../psicologo_com_br_backoffice/view/convenios/ver.php');
     }
 
     public function start()
     {
-        $convenios = 'active';
+        $convenios = 'btn-light';
 
         require('../psicologo_com_br_backoffice/view/convenios/listar.php');
     }

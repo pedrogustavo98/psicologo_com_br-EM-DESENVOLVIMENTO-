@@ -30,7 +30,7 @@
                     <img src="/assets/imagens/logo.png" class="logo">
                 </div>
                 <!-- teste 1 -->
-                <div class="col-md-10 d-flex flex-column">
+                <div class="col-md-10 <?php echo $_SESSION['usuario']['tipo'] == 'Master' ? 'd-flex' : 'd-none' ?> flex-column">
                     <a href="/dashboard">
                         <button class="btn btn-primary m-1 d-flex justify-content-center <?php echo $dashboard ?>"><i class="fa-solid fa-chart-line"></i>
                             <div class="btn-titulo">Dashboard</div>
@@ -87,15 +87,42 @@
                         </button>
                     </a>
                 </div>
+
+
+                <div class="col-md-10 <?php echo $_SESSION['usuario']['tipo'] == 'Convidado' ? 'd-flex' : 'd-none' ?> flex-column">
+                    <a href="/dashboard">
+                        <button class="btn btn-primary m-1 d-flex justify-content-center <?php echo $dashboard ?>"><i class="fa-solid fa-chart-line"></i>
+                            <div class="btn-titulo">Dashboard</div>
+                        </button>
+                    </a>
+
+                    <a href="/mensagens">
+                        <button class="btn btn-primary m-1 d-flex justify-content-center <?php echo $mensagens ?>">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div class="btn-titulo">Meus Horários</div>
+                        </button>
+                    </a>
+
+
+                    <a href="/perfil">
+                        <button class="btn btn-primary m-1 d-flex justify-content-center <?php echo $perfil ?>">
+                            <i class="fa-solid fa-address-card"></i>
+                            <div class="btn-titulo">
+                                Meu Perfil
+                            </div>
+                        </button>
+                    </a>
+
+                </div>
             </div>
 
             <div class="d-flex w-100 flex-column">
                 <div class="tab-superior text-end p-3">
                     <!-- teste 2 -->
                     <button onclick="sair()" class="h-100" style="background: none; border: none;">
-                        <i class="fas fa-angle-down"></i>
-                        <span style="font-weight: bold;"><?php echo $_SESSION['usuario']['nome'] . ' (' . $_SESSION['usuario']['tipo'] . ')' ?></span>
-                        <i class="fa-solid fa-circle-user fa-xl black-icon"></i>
+                        <i class="fas fa-angle-down white-icon"></i>
+                        <span style="font-weight: bold; color: white;"><?php echo $_SESSION['usuario']['nome'] . ' (' . $_SESSION['usuario']['tipo'] . ')' ?></span>
+                        <i class="fa-solid fa-circle-user fa-xl white-icon"></i>
                     </button>
                     <button id="btn-sair" class="btn btn-secondary" style="position: absolute; top: 50px; right: 35px; width: 185px;">
                         <div class="d-flex align-items-center">

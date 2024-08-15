@@ -21,8 +21,8 @@ class MinhaClinica
     {
         // pre('aqui');
         // $teste = 1;
-        $clinica = "active";
-        require('../psicologo_com_br_backoffice/view/home/listar.php');
+        $clinica = "btn-light";
+        require('../psicologo_com_br_backoffice/view/minhaclinica/start.php');
     }
 
 

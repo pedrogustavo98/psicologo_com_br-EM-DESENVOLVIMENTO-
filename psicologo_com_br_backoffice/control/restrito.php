@@ -17,7 +17,7 @@ class Restrito
     public function cadastrar()
     {
         // pre('aqui');
-        $workshops = 'active';
+        $workshops = 'btn-light';
 
         require('../psicologo_com_br_backoffice/view/workshops/cadastrar.php');
     }
@@ -25,7 +25,7 @@ class Restrito
     public function ver()
     {
         // pre('aqui');
-        $workshops = 'active';
+        $workshops = 'btn-light';
 
         require('../psicologo_com_br_backoffice/view/workshops/ver.php');
     }

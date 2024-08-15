@@ -13,7 +13,7 @@ class Workshops
     public function cadastrar()
     {
         // pre('aqui');
-        $workshops = 'active';
+        $workshops = 'btn-light';
 
         require('../psicologo_com_br_backoffice/view/workshops/cadastrar.php');
     }
@@ -21,7 +21,7 @@ class Workshops
     public function ver()
     {
         // pre('aqui');
-        $workshops = 'active';
+        $workshops = 'btn-light';
 
         require('../psicologo_com_br_backoffice/view/workshops/ver.php');
     }
@@ -31,7 +31,7 @@ class Workshops
 
         // pre('aqui');
         // $teste = 1;
-        $workshops = 'active';
+        $workshops = 'btn-light';
 
         require('../psicologo_com_br_backoffice/view/workshops/listar.php');
     }
@@ -41,7 +41,7 @@ class Workshops
 
         // pre('aqui');
         // $teste = 1;
-        $workshops = 'active';
+        $workshops = 'btn-light';
 
         require('../psicologo_com_br_backoffice/view/workshops/listar.php');
     }

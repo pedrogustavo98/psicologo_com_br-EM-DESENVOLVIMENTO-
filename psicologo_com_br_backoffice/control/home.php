@@ -14,7 +14,7 @@ class Home
     public function cadastrar()
     {
         // pre('aqui');
-        $home = 'active';
+        $home = 'btn-light';
 
     }
 
@@ -22,7 +22,7 @@ class Home
     {
         // pre('aqui');
         // $teste = 1;
-        $home = 'active';
+        $home = 'btn-light';
 
         require('../psicologo_com_br_backoffice/view/home/listar.php');
     }
