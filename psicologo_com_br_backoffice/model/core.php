@@ -45,6 +45,40 @@ class Core
     }
 
 
+    public function uploadFiles()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
+                $arquivoTemp = $_FILES['imagem']['tmp_name'];
+                $nomeArquivo = $_FILES['imagem']['name'];
+                $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+
+                $destino = 'uploads/';
+
+                if (!is_dir($destino)) {
+                    mkdir($destino, 0755, true);
+                }
+
+                $nomeAtualizado = md5($nomeArquivo) . '.' . $extensao;
+                $caminho = $destino . $nomeAtualizado;
+
+                $tiposPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
+
+
+                if (in_array($extensao, $tiposPermitidos)) {
+                    if (move_uploaded_file($arquivoTemp, $caminho)) {
+                        return $caminho;
+                    } else {
+                        $this->return("error", 'Oops!', "Erro ao mover o arquivo para o destino.");
+                    }
+                }else{
+                    $this->return("error", 'Oops!', "Tipo de arquivo não permitido. Por favor, envie uma imagem JPG, JPEG, PNG ou GIF.");
+                }
+            }
+        }
+    }
+
+
     public function tratarHeader($header)
     {
         $header = explode(',', $header);

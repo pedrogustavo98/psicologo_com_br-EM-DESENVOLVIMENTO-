@@ -23,16 +23,21 @@
 
         <div class="content-janela m-5">
 
-            <form class="d-flex" id="form-gerar">
+            <form class="d-flex" id="form-gerar" enctype="multipart/form-data">
                 <div class="row">
 
                     <h5>Dados do profissional</h5>
 
                     <div class="d-flex p-0 m-0">
                         <div class="col-md-12 d-flex m-2 p-0">
-                            <img class="m-2" src="https://placehold.jp/220x220.png">
+                            <label for="imagem" class="label-geral">
+                                <div class="img-container">
+                                    <img class="m-2" id="img-preview" src="https://placehold.jp/220x220.png">
+                                    <input type="file" class="form-control required text-capitalize required d-none" accept=".jpeg, .png, .jpg" onchange="previewImagem(event)" placeholder="Ex.: Anderson Silva" name="imagem" id="imagem">
+                                </div>
+                            </label>
                         </div>
-                       
+
                     </div>
 
 
@@ -76,6 +81,27 @@
 
 
 <script>
+    function previewImagem(event) {
+        // Obtém o arquivo selecionado
+        const file = event.target.files[0];
+
+        // Verifica se há um arquivo e se ele é uma imagem
+        if (file && file.type.startsWith('image/')) {
+            const reader = new FileReader();
+
+            // Carrega a imagem selecionada
+            reader.onload = function(e) {
+                const imgPreview = document.getElementById('img-preview');
+                imgPreview.src = e.target.result;
+                imgPreview.style.display = 'block'; // Exibe a imagem
+            };
+
+            // Lê o arquivo como URL de dados
+            reader.readAsDataURL(file);
+        }
+    }
+
+
 
     $('#btn-gerar').on('click', function(e) {
         e.preventDefault();
@@ -124,42 +150,4 @@
     });
 
 
-    function validarCamposSV(servico, tipo) {
-        if (tipo == 'add') {
-            $(`#duracao-planejamento-${servico}`).addClass('required');
-            $(`#data-inicio-planejamento-${servico}`).addClass('required');
-            $(`#data-termino-planejamento-${servico}`).addClass('required');
-            $(`#duracao-design-${servico}`).addClass('required');
-            $(`#data-inicio-design-${servico}`).addClass('required');
-            $(`#data-termino-design-${servico}`).addClass('required');
-            $(`#duracao-desenvolvimento-${servico}`).addClass('required');
-            $(`#data-inicio-desenvolvimento-${servico}`).addClass('required');
-            $(`#data-termino-desenvolvimento-${servico}`).addClass('required');
-            $(`#duracao-testes-${servico}`).addClass('required');
-            $(`#data-inicio-testes-${servico}`).addClass('required');
-            $(`#data-termino-testes-${servico}`).addClass('required');
-            $(`#duracao-lancamento-${servico}`).addClass('required');
-            $(`#data-inicio-lancamento-${servico}`).addClass('required');
-            $(`#data-termino-lancamento-${servico}`).addClass('required');
-            $(`#valor-desenvolvimento-${servico}`).addClass('required');
-        } else {
-            $(`#duracao-planejamento-${servico}`).removeClass('required');
-            $(`#data-inicio-planejamento-${servico}`).removeClass('required');
-            $(`#data-termino-planejamento-${servico}`).removeClass('required');
-            $(`#duracao-design-${servico}`).removeClass('required');
-            $(`#data-inicio-design-${servico}`).removeClass('required');
-            $(`#data-termino-design-${servico}`).removeClass('required');
-            $(`#duracao-desenvolvimento-${servico}`).removeClass('required');
-            $(`#data-inicio-desenvolvimento-${servico}`).removeClass('required');
-            $(`#data-termino-desenvolvimento-${servico}`).removeClass('required');
-            $(`#duracao-testes-${servico}`).removeClass('required');
-            $(`#data-inicio-testes-${servico}`).removeClass('required');
-            $(`#data-termino-testes-${servico}`).removeClass('required');
-            $(`#duracao-lancamento-${servico}`).removeClass('required');
-            $(`#data-inicio-lancamento-${servico}`).removeClass('required');
-            $(`#data-termino-lancamento-${servico}`).removeClass('required');
-            $(`#valor-desenvolvimento-${servico}`).removeClass('required');
-        }
-
-    }
 </script>

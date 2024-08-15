@@ -262,42 +262,4 @@
     });
 
 
-    function validarCamposSV(servico, tipo) {
-        if (tipo == 'add') {
-            $(`#duracao-planejamento-${servico}`).addClass('required');
-            $(`#data-inicio-planejamento-${servico}`).addClass('required');
-            $(`#data-termino-planejamento-${servico}`).addClass('required');
-            $(`#duracao-design-${servico}`).addClass('required');
-            $(`#data-inicio-design-${servico}`).addClass('required');
-            $(`#data-termino-design-${servico}`).addClass('required');
-            $(`#duracao-desenvolvimento-${servico}`).addClass('required');
-            $(`#data-inicio-desenvolvimento-${servico}`).addClass('required');
-            $(`#data-termino-desenvolvimento-${servico}`).addClass('required');
-            $(`#duracao-testes-${servico}`).addClass('required');
-            $(`#data-inicio-testes-${servico}`).addClass('required');
-            $(`#data-termino-testes-${servico}`).addClass('required');
-            $(`#duracao-lancamento-${servico}`).addClass('required');
-            $(`#data-inicio-lancamento-${servico}`).addClass('required');
-            $(`#data-termino-lancamento-${servico}`).addClass('required');
-            $(`#valor-desenvolvimento-${servico}`).addClass('required');
-        } else {
-            $(`#duracao-planejamento-${servico}`).removeClass('required');
-            $(`#data-inicio-planejamento-${servico}`).removeClass('required');
-            $(`#data-termino-planejamento-${servico}`).removeClass('required');
-            $(`#duracao-design-${servico}`).removeClass('required');
-            $(`#data-inicio-design-${servico}`).removeClass('required');
-            $(`#data-termino-design-${servico}`).removeClass('required');
-            $(`#duracao-desenvolvimento-${servico}`).removeClass('required');
-            $(`#data-inicio-desenvolvimento-${servico}`).removeClass('required');
-            $(`#data-termino-desenvolvimento-${servico}`).removeClass('required');
-            $(`#duracao-testes-${servico}`).removeClass('required');
-            $(`#data-inicio-testes-${servico}`).removeClass('required');
-            $(`#data-termino-testes-${servico}`).removeClass('required');
-            $(`#duracao-lancamento-${servico}`).removeClass('required');
-            $(`#data-inicio-lancamento-${servico}`).removeClass('required');
-            $(`#data-termino-lancamento-${servico}`).removeClass('required');
-            $(`#valor-desenvolvimento-${servico}`).removeClass('required');
-        }
-
-    }
 </script>

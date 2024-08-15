@@ -68,6 +68,9 @@ switch ($uri[0]) {
             case 'ver':
                 $profissionais->ver($uri[2]);
                 break;
+            case 'alterar':
+                $profissionais->alterar($uri[2]);
+                break;
             case 'salvar':
                 $profissionais->salvar();
                 break;
