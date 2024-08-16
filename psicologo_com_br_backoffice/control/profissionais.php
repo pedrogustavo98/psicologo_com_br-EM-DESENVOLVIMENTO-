@@ -46,21 +46,21 @@ class Profissionais
 
     public function salvar()
     {
+        // pre($_FILES);
         $profissionais = 'btn-light';
 
-        if($_POST['nome']  == false || $_POST['email']  == false || $_POST['registro']  == false || $_POST['tipo'] == false ){
-            $this->core->return('error', 'Oops!', 'Verifique os campos e tente novamente!');
-        }
+        // $profissional = $this->profissionaisModel->buscarProfissional($_POST['email'], $_POST['registro'], '');
+        // $resultado = $profissional->fetchAll(PDO::FETCH_ASSOC);
 
-        $profissional = $this->profissionaisModel->buscarProfissional($_POST['email'], $_POST['registro'], '');
-        $resultado = $profissional->fetchAll(PDO::FETCH_ASSOC);
+        // if ($resultado[0]) {
+        //     $this->core->return('error', 'Oops!', 'Já existe um profissional com o email ou número de registro cadastrado.');
+        // }
+        
 
-        if ($resultado[0]) {
-            $this->core->return('error', 'Oops!', 'Já existe um profissional com o email ou número de registro cadastrado.');
-        }
+        $file = $this->core->uploadFiles();
         
-        
-        $_POST['imagem'] = $file = $this->core->uploadFiles();
+        $_POST['imagem'] = $file;
+        // pre($_POST);
 
         $salvarProfissional = $this->profissionaisModel->salvarProfissional($_POST);
 

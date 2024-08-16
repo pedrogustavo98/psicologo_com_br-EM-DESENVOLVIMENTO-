@@ -33,7 +33,7 @@
                             <label for="imagem" class="label-geral">
                                 <div class="img-container">
                                     <img class="m-2" id="img-preview" src="https://placehold.jp/220x220.png">
-                                    <input type="file" class="form-control required text-capitalize required d-none" accept=".jpeg, .png, .jpg" onchange="previewImagem(event)" placeholder="Ex.: Anderson Silva" name="imagem" id="imagem">
+                                    <input type="file" class="form-control required text-capitalize d-none" accept=".jpeg, .png, .jpg" onchange="previewImagem(event)" placeholder="Ex.: Anderson Silva" name="imagem" id="imagem">
                                 </div>
                             </label>
                         </div>
@@ -44,15 +44,15 @@
 
                     <div class="col-md-3 mt-5">
                         <label class="label-geral" for="nome">Nome*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: Anderson Silva" name="nome" id="nome">
+                        <input type="text" class="form-control required text-capitalize" placeholder="Ex.: Anderson Silva" name="nome" id="nome">
                     </div>
                     <div class="col-md-3 mt-5">
                         <label class="label-geral" for="email">Email*</label>
-                        <input type="text" class="form-control required required" placeholder="Ex.: anderson@email.com" name="email" id="email">
+                        <input type="text" class="form-control required" placeholder="Ex.: anderson@email.com" name="email" id="email">
                     </div>
                     <div class="col-md-3 mt-5">
                         <label class="label-geral" for="registro">Número de registro*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: CRP 00/000000 - UF" name="registro" id="registro">
+                        <input type="text" class="form-control required text-capitalize" placeholder="Ex.: CRP 00/000000 - UF" name="registro" id="registro">
                     </div>
                     <div class="col-md-3 mt-5">
                         <label class="label-geral" for="tipo">Tipo*</label>
@@ -141,6 +141,10 @@
                     title: response.titulo,
                     text: response.mensagem,
                     icon: response.status
+                }).then((result) => {
+                    if(response.status == 'success'){
+                        window.location = '/profissionais/listar';
+                    }
                 });
             },
             error: function(xhr, status, error) { // Função de callback para erros

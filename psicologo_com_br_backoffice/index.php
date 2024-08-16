@@ -14,6 +14,12 @@ function pre($valor)
     exit;
 }
 
+function pr($valor)
+{
+    echo "<pre>";
+    print_r($valor);
+}
+
 $uri = explode('/', substr($_SERVER['REQUEST_URI'], '1'));
 
 
@@ -53,7 +59,10 @@ switch ($uri[0]) {
                 $workshops->cadastrar();
                 break;
             case 'ver':
-                $workshops->ver();
+                $workshops->ver($uri[2]);
+                break;
+            case 'salvar':
+                $workshops->salvar();
                 break;
         }
         break;

@@ -23,18 +23,34 @@
 
         <div class="content-janela m-5">
 
-            <form class="d-flex" id="form-gerar">
+            <form class="d-flex" id="form-gerar" enctype="multipart/form-data">
                 <div class="row">
 
                     <h5>Dados do evento</h5>
 
                     <div class="d-flex p-0 m-0">
                         <div class="col-md-12 d-flex m-2 p-0">
-                            <img class="m-2" src="https://placehold.jp/220x220.png">
-                            <img class="m-2" src="https://placehold.jp/220x220.png">
-                            <img class="m-2" src="https://placehold.jp/220x220.png">
+                            <label for="imagem1" class="label-geral">
+                                <div class="img-container">
+                                    <img class="m-2" id="img-preview-0" src="https://placehold.jp/220x220.png">
+                                    <input type="file" class="d-none required" name="imagem[]" accept=".jpeg, .png, .jpg" onchange="previewImagem(event, 0)" id="imagem1">
+                                </div>
+                            </label>
+                            <label for="imagem2" class="label-geral">
+                                <div class="img-container">
+                                    <img class="m-2" id="img-preview-1" src="https://placehold.jp/220x220.png">
+                                    <input type="file" class="d-none required" name="imagem[]" accept=".jpeg, .png, .jpg" onchange="previewImagem(event, 1)" id="imagem2">
+                                </div>
+                            </label>
+                            <label for="imagem3" class="label-geral">
+                                <div class="img-container">
+                                    <img class="m-2" id="img-preview-2" src="https://placehold.jp/220x220.png">
+                                    <input type="file" class="d-none required" name="imagem[]" accept=".jpeg, .png, .jpg" onchange="previewImagem(event, 2)" id="imagem3">
+                                </div>
+                            </label>
+
                         </div>
-                       
+
                     </div>
 
 
@@ -44,10 +60,10 @@
                         <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: Anderson Silva" name="nome" id="nome">
                     </div>
                     <div class="col-md-10 mt-5">
-                        <label class="label-geral" for="nome">Descrição do evento*</label>
-                        <textarea class="form-control required text-capitalize required" placeholder="Ex.: Anderson Silva" name="nome" id="nome"></textarea>
+                        <label class="label-geral" for="descricao">Descrição do evento*</label>
+                        <textarea class="form-control required text-capitalize required" name="descricao" id="descricao"></textarea>
                     </div>
-                    
+
 
 
                 </div>
@@ -70,133 +86,45 @@
 
 
 <script>
-    $('#container-sv-app').hide();
-    $('#container-sv-site').hide();
-    $('#container-sv-pwa').hide();
-    $('#container-sv-painel').hide();
-    $('#container-investimento-pwa').hide();
-    $('#container-investimento-site').hide();
-    $('#container-investimento-app').hide();
+    function previewImagem(event, id) {
+        const input = event.target;
+        const reader = new FileReader();
 
-    $('#funcionalidade-app').hide();
-    $('#funcionalidade-site').hide();
-    $('#funcionalidade-pwa').hide();
-    $('#funcionalidade-painel').hide();
-    $('#tecnologia-app').hide();
-    $('#tecnologia-site').hide();
-    $('#tecnologia-pwa').hide();
-    $('#tecnologia-painel').hide();
+        reader.onload = function(e) {
+            const imgPreview = document.getElementById(`img-preview-${id}`);
+            imgPreview.src = e.target.result;
+            imgPreview.style.display = 'block';
+        };
 
+        reader.readAsDataURL(input.files[0]);
+    }
 
-
-    $('#sv-app').on('change', function() {
-        dado = $('#sv-app');
-
-        $('#container-sv-app').hide();
-        $('#container-investimento-app').hide();
-        $('#funcionalidade-app').hide();
-        $('#tecnologia-app').hide();
-        validarCamposSV('app', 'delete');
-
-
-        if (dado[0].checked) {
-            $('#container-sv-app').show();
-            $('#container-investimento-app').show();
-            $('#funcionalidade-app').show();
-            $('#tecnologia-app').show();
-            validarCamposSV('app', 'add');
-
-        }
-    })
-
-
-    $('#sv-site').on('change', function() {
-        dado = $('#sv-site');
-
-        $('#container-sv-site').hide();
-        $('#container-investimento-site').hide();
-        $('#funcionalidade-site').hide();
-        $('#tecnologia-site').hide();
-
-        validarCamposSV('site', 'delete');
-
-
-        if (dado[0].checked) {
-            $('#container-sv-site').show();
-            $('#container-investimento-site').show();
-            $('#funcionalidade-site').show();
-            $('#tecnologia-site').show();
-            validarCamposSV('site', 'add');
-        }
-    })
-
-
-    $('#sv-pwa').on('change', function() {
-        dado = $('#sv-pwa');
-
-        $('#container-sv-pwa').hide();
-        $('#container-investimento-pwa').hide();
-        $('#funcionalidade-pwa').hide();
-        $('#tecnologia-pwa').hide();
-        validarCamposSV('pwa', 'delete')
-
-        if (dado[0].checked) {
-            $('#container-sv-pwa').show();
-            $('#container-investimento-pwa').show();
-            $('#funcionalidade-pwa').show();
-            $('#tecnologia-pwa').show();
-            validarCamposSV('pwa', 'add')
-        }
-    })
-
-    $('#sv-painel').on('change', function() {
-        dado = $('#sv-painel');
-
-        $('#container-sv-painel').hide();
-        $('#container-investimento-painel').hide();
-        $('#funcionalidade-painel').hide();
-        $('#tecnologia-painel').hide();
-
-
-        validarCamposSV('painel', 'delete')
-
-
-        if (dado[0].checked) {
-            $('#container-sv-painel').show();
-            $('#container-investimento-painel').show();
-            $('#funcionalidade-painel').show();
-            $('#tecnologia-painel').show();
-
-            validarCamposSV('painel', 'add')
-        }
-    })
 
 
 
     $('#btn-gerar').on('click', function(e) {
         e.preventDefault();
 
-        // var errors = 0;
+        var errors = 0;
 
-        // $('.required').each(function(index, element) {
-        //     errors += validateEmpty(element.id);
-        //     // console.log(errors);
-        // });
+        $('.required').each(function(index, element) {
+            errors += validateEmpty(element.id);
+        });
 
 
-        // if (errors > 0) {
-        //     Swal.fire({
-        //         title: 'Oops!',
-        //         text: 'Por favor, preencha os campos obrigatórios!',
-        //         icon: 'error'
-        //     });
+        if (errors > 0) {
+            Swal.fire({
+                title: 'Oops!',
+                text: 'Por favor, preencha os campos obrigatórios!',
+                icon: 'error'
+            });
 
-        //     return;
-        // }
+            return;
+        }
 
 
         $.ajax({
-            url: '/?modulo=home&action=enviar', // URL do arquivo PHP que processará a requisição
+            url: '/workshops/salvar', // URL do arquivo PHP que processará a requisição
             type: 'POST',
             async: false,
             cache: false,
@@ -208,57 +136,12 @@
                 let dado = response;
 
                 Swal.fire({
-                    title: response.title,
-                    text: response.message,
+                    title: response.titulo,
+                    text: response.mensagem,
                     icon: response.status
                 }).then(() => {
                     if (response.status == 'success') {
-                        $.ajax({
-                            url: '/?modulo=home&action=gerar', // URL do arquivo PHP que processará a requisição
-                            type: 'POST',
-                            async: false,
-                            cache: false,
-                            contentType: false,
-                            processData: false,
-                            dataType: 'html',
-                            data: new FormData(document.getElementById('form-gerar')),
-                            success: function(response) {
-                                console.log(response);
-
-                                setTimeout(() => {
-                                    const opt = {
-                                        // margin: [0, 0, 10, 0], // Margens em mm [topo, esquerda, baixo, direita]
-                                        filename: 'document.pdf',
-                                        image: {
-                                            type: 'jpeg',
-                                            quality: 0.98
-                                        },
-                                        html2canvas: {
-                                            scale: 2,
-                                            logging: true,
-                                            dpi: 192,
-                                            letterRendering: true
-                                        },
-                                        jsPDF: {
-                                            unit: 'mm',
-                                            format: 'a4',
-                                            orientation: 'portrait'
-                                        },
-                                        pagebreak: {
-                                            mode: ['css', 'legacy'],
-                                            before: '.break-before',
-                                            after: '.break-after'
-                                        }
-                                    };
-
-                                    // Use html2pdf para gerar o PDF com as opções especificadas
-                                    html2pdf().from(response).set(opt).save();
-                                }, 500);
-
-
-
-                            }
-                        });
+                        window.location = '/workshops/listar';
                     }
                 });
             },
@@ -267,6 +150,4 @@
             }
         });
     });
-
-
 </script>

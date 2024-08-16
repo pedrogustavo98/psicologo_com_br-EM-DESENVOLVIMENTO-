@@ -78,8 +78,8 @@
 
 
             <div class="col-md-12 m-3 p-3 d-flex justify-content-end">
-                <button type="button" id="btn-alterar" class="btn btn-dark">alterar</button>
-                <button type="button" id="btn-salvar" class="btn btn-dark">salvar</button>
+                <button type="button" id="btn-alterar" class="btn btn-dark">Alterar</button>
+                <button type="button" id="btn-salvar" class="btn btn-dark">Salvar</button>
             </div>
 
 

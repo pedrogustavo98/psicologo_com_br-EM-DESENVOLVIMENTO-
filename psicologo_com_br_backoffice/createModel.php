@@ -8,7 +8,7 @@ $mensagensModel = new MensagensModel($uri);
 $minhaClinicaModel = new MinhaClinicaModel($db->getConnection());
 $profissionaisModel = new ProfissionaisModel($db->getConnection());
 $quemsomosModel = new QuemSomosModel($uri);
-$workshopsModel = new WorkshopsModel($uri);
+$workshopsModel = new WorkshopsModel($db->getConnection());
 $restritoModel = new RestritoModel($db->getConnection());
 
 

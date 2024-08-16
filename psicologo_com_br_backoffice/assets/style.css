@@ -210,3 +210,7 @@ img{
 #complemento::placeholder, #uf::placeholder{
     text-transform: capitalize;
 }
+
+table{
+    width: 100%;
+}

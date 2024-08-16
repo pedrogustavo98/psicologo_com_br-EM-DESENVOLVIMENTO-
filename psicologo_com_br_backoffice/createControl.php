@@ -7,6 +7,6 @@ $mensagens = new Mensagens($uri);
 $minhaClinica = new MinhaClinica($uri, $minhaClinicaModel, $core);
 $profissionais = new Profissionais($uri, $profissionaisModel, $core);
 $quemsomos = new QuemSomos($uri);
-$workshops = new Workshops($uri);
+$workshops = new Workshops($uri, $workshopsModel, $core);
 $restrito = new Restrito($uri, $restritoModel, $core);
 $perfil = new Perfil($uri, $restritoModel, $core);
