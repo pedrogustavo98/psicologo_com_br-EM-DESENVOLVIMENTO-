@@ -16,10 +16,10 @@ Este repositório contém o código-fonte de um sistema CRM e painel administrat
 
 ## Tecnologias Utilizadas
 
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: PHP (ou outra linguagem de sua escolha, como Node.js)
-- **Banco de Dados**: MySQL/PostgreSQL (ou outro banco de dados relacional)
-- **Frameworks e Bibliotecas**: Bootstrap para responsividade, e possivelmente jQuery ou Vue.js para interações dinâmicas.
+- **Frontend**: HTML, CSS, JavaScript, JQUERY, Bootstrap
+- **Backend**: PHP
+- **Banco de Dados**: SQL
+- **Frameworks e Bibliotecas**: Bootstrap para responsividade, e jQuery.
 
 ## Estrutura do Projeto
 
@@ -30,7 +30,6 @@ Este repositório contém o código-fonte de um sistema CRM e painel administrat
   - `models/`: Contém a lógica de interação com o banco de dados.
   - `config/`: Configurações do sistema, como conexão com o banco de dados.
   - `assets/`: Arquivos de estilo e scripts JavaScript.
-  - `docs/`: Documentação adicional do sistema.
 
 ## Instalação
 
