@@ -1,18 +1,7 @@
 <?php require('../psicologo_com_br_backoffice/view/componentes/header.php') ?>
 
 <div class="d-flex flex-column col-md-11">
-
-    <div class="d-flex">
-        <h1>CONVÊNIOS PARCEIROS</h1>
-
-
-        <div class="container-adicionar">
-            <a href="/convenios/listar">
-                <button class="btn btn-dark botao-adicionar">Voltar</button>
-            </a>
-        </div>
-
-    </div>
+    <h1>GERADOR DE PROPOSTAS</h1>
 
     <div class="col-md-12 m-0 p-0 main-janela shadow">
         <div class="tab-janela col-md-12 p-2">
@@ -26,27 +15,53 @@
             <form class="d-flex" id="form-gerar">
                 <div class="row">
 
-                    <h5>Dados do convênio</h5>
+                    <h5>Dados do cliente</h5>
+                    <div class="col-md-3">
+                        <label class="label-geral" for="nome">Nome do cliente*</label>
+                        <input type="text" class="form-control required text-capitalize required" name="nome" id="nome">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="label-geral" for="tel">Telefone*</label>
+                        <input type="text" class="form-control required text-capitalize required" name="telefone" id="telefone">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="label-geral" for="empresa">Empresa*</label>
+                        <input type="text" class="form-control required text-capitalize required" name="empresa" id="empresa">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="label-geral" for="empresa">E-mail*</label>
+                        <input type="text" class="form-control required text-capitalize required" name="email" id="email">
+                    </div>
 
-                    <div class="col-md-12" style="width: 200px;">
-                        <img src="https://placehold.jp/220x220.png">
+                    <div class="col-md-3 mt-5">
+                        <label class="label-geral" for="data">Data de envio*</label>
+                        <input type="date" class="form-control required" name="data" id="data">
                     </div>
 
 
+                    <div class="d-flex flex-column">
+                        <h5 class="mt-5">Mensagem</h5>
 
-                    <div class="col-md-12 mt-5">
-                        <label class="label-geral" for="nome">Nome do convênio*</label>
-                        <input type="text" class="form-control required text-capitalize required campo-nome" placeholder="Ex.: Anderson Silva" name="nome" id="nome">
+                        <div class="col-md-8">
+                            <textarea maxlength="450" class="form-control required text-capitalize required" name="texto-final" id="texto-final"></textarea>
+                        </div>
                     </div>
-                    
 
-
+                    <div class="d-flex flex-column align-items-end">
+                        
+                        <div class="col-md-8">
+                            <div class="col-md-12">
+                                <h5 class="mt-5">Resposta</h5>
+                            </div>
+                            <textarea maxlength="450" class="form-control required text-capitalize required" name="texto-final" id="texto-final"></textarea>
+                        </div>
+                    </div>
                 </div>
             </form>
 
 
             <div class="col-md-12 m-3 p-3 d-flex justify-content-end">
-                <button type="button" id="btn-gerar" class="btn btn-dark">Cadastrar</button>
+                <button type="button" id="btn-gerar" class="btn btn-primary">Enviar</button>
             </div>
 
 
@@ -258,7 +273,4 @@
             }
         });
     });
-
-
-   
 </script>

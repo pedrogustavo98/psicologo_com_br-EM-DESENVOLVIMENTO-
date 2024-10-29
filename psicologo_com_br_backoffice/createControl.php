@@ -3,7 +3,7 @@
 $convenios = new Convenios($uri);
 $dashboard = new Dashboard($uri);
 $home = new Home($uri);
-$mensagens = new Mensagens($uri);
+$mensagens = new Mensagens($uri, $core, $mensagensModel);
 $minhaClinica = new MinhaClinica($uri, $minhaClinicaModel, $core);
 $profissionais = new Profissionais($uri, $profissionaisModel, $core);
 $quemsomos = new QuemSomos($uri);

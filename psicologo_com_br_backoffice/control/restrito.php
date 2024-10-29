@@ -16,7 +16,6 @@ class Restrito
 
     public function cadastrar()
     {
-        // pre('aqui');
         $workshops = 'btn-light';
 
         require('../psicologo_com_br_backoffice/view/workshops/cadastrar.php');
@@ -24,7 +23,6 @@ class Restrito
 
     public function ver()
     {
-        // pre('aqui');
         $workshops = 'btn-light';
 
         require('../psicologo_com_br_backoffice/view/workshops/ver.php');
@@ -42,6 +40,8 @@ class Restrito
 
         $usuario = $this->restritoModel->buscarUsuario($_POST['email']);
         $resultado = $usuario->fetchAll(PDO::FETCH_ASSOC)[0];
+
+        $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
         
         if ($resultado) {
             if (password_verify($_POST['senha'], $resultado['senha'])) {

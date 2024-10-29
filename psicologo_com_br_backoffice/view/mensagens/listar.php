@@ -1,169 +1,63 @@
 <?php require('../psicologo_com_br_backoffice/view/componentes/header.php') ?>
 
+<style>
+    td:nth-child(2) {
+        width: 65%;
+    }
+</style>
+
 <div class="d-flex flex-column col-md-11">
 
     <div class="d-flex">
-        <h1>CONVÊNIOS PARCEIROS</h1>
-
-
-        <div class="container-adicionar">
-            <a href="/convenios/listar">
-                <button class="btn btn-dark botao-adicionar">Voltar</button>
-            </a>
-        </div>
-
+        <h1>MENSAGENS</h1>
     </div>
 
     <div class="col-md-12 m-0 p-0 main-janela shadow">
         <div class="tab-janela col-md-12 p-2">
-            CADASTRAR
+            PESQUISAR
         </div>
 
 
 
         <div class="content-janela m-5">
 
-            <form class="d-flex" id="form-gerar">
-                <div class="row">
+            <div class="row">
+                <div class="col-md-12 m-0 p-0">
+                    <form class="d-flex" id="form-gerar">
 
-                    <h5>Dados do convênio</h5>
+                        <div class="col-md-3 m-2 d-flex">
+                            <input type="text" class="form-control input-padrao" placeholder="Nome" name="nome" id="nome">
+                        </div>
 
-                    <div class="col-md-12" style="width: 200px;">
-                        <img src="https://placehold.jp/220x220.png">
-                    </div>
+                        <div class="col-md-3 m-2 d-flex">
 
-
-
-                    <div class="col-md-12 mt-5">
-                        <label class="label-geral" for="nome">Nome do convênio*</label>
-                        <input type="text" class="form-control required text-capitalize required campo-nome" placeholder="Ex.: Anderson Silva" name="nome" id="nome">
-                    </div>
-                    
-
-
+                            <button class="btn btn-dark" type="submit">Buscar</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
-
-
-            <div class="col-md-12 m-3 p-3 d-flex justify-content-end">
-                <button type="button" id="btn-gerar" class="btn btn-dark">Cadastrar</button>
             </div>
-
-
-            <div id="hidden-content" style="display:none;"></div>
-
-
         </div>
+
+
+        <div id="hidden-content" style="display:none;"></div>
+
+
     </div>
+
+    <div class="col-md-12 shadow main-janela">
+        <?php echo $tabela ?>
+
+    </div>
+</div>
+
+
+
 </div>
 <?php require('../psicologo_com_br_backoffice/view/componentes/footer.php') ?>
 
 
 
 <script>
-    $('#container-sv-app').hide();
-    $('#container-sv-site').hide();
-    $('#container-sv-pwa').hide();
-    $('#container-sv-painel').hide();
-    $('#container-investimento-pwa').hide();
-    $('#container-investimento-site').hide();
-    $('#container-investimento-app').hide();
-
-    $('#funcionalidade-app').hide();
-    $('#funcionalidade-site').hide();
-    $('#funcionalidade-pwa').hide();
-    $('#funcionalidade-painel').hide();
-    $('#tecnologia-app').hide();
-    $('#tecnologia-site').hide();
-    $('#tecnologia-pwa').hide();
-    $('#tecnologia-painel').hide();
-
-
-
-    $('#sv-app').on('change', function() {
-        dado = $('#sv-app');
-
-        $('#container-sv-app').hide();
-        $('#container-investimento-app').hide();
-        $('#funcionalidade-app').hide();
-        $('#tecnologia-app').hide();
-        validarCamposSV('app', 'delete');
-
-
-        if (dado[0].checked) {
-            $('#container-sv-app').show();
-            $('#container-investimento-app').show();
-            $('#funcionalidade-app').show();
-            $('#tecnologia-app').show();
-            validarCamposSV('app', 'add');
-
-        }
-    })
-
-
-    $('#sv-site').on('change', function() {
-        dado = $('#sv-site');
-
-        $('#container-sv-site').hide();
-        $('#container-investimento-site').hide();
-        $('#funcionalidade-site').hide();
-        $('#tecnologia-site').hide();
-
-        validarCamposSV('site', 'delete');
-
-
-        if (dado[0].checked) {
-            $('#container-sv-site').show();
-            $('#container-investimento-site').show();
-            $('#funcionalidade-site').show();
-            $('#tecnologia-site').show();
-            validarCamposSV('site', 'add');
-        }
-    })
-
-
-    $('#sv-pwa').on('change', function() {
-        dado = $('#sv-pwa');
-
-        $('#container-sv-pwa').hide();
-        $('#container-investimento-pwa').hide();
-        $('#funcionalidade-pwa').hide();
-        $('#tecnologia-pwa').hide();
-        validarCamposSV('pwa', 'delete')
-
-        if (dado[0].checked) {
-            $('#container-sv-pwa').show();
-            $('#container-investimento-pwa').show();
-            $('#funcionalidade-pwa').show();
-            $('#tecnologia-pwa').show();
-            validarCamposSV('pwa', 'add')
-        }
-    })
-
-    $('#sv-painel').on('change', function() {
-        dado = $('#sv-painel');
-
-        $('#container-sv-painel').hide();
-        $('#container-investimento-painel').hide();
-        $('#funcionalidade-painel').hide();
-        $('#tecnologia-painel').hide();
-
-
-        validarCamposSV('painel', 'delete')
-
-
-        if (dado[0].checked) {
-            $('#container-sv-painel').show();
-            $('#container-investimento-painel').show();
-            $('#funcionalidade-painel').show();
-            $('#tecnologia-painel').show();
-
-            validarCamposSV('painel', 'add')
-        }
-    })
-
-
-
     $('#btn-gerar').on('click', function(e) {
         e.preventDefault();
 
@@ -258,7 +152,4 @@
             }
         });
     });
-
-
-   
 </script>

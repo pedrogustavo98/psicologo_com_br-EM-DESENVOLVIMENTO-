@@ -23,6 +23,20 @@ function pr($valor)
 $uri = explode('/', substr($_SERVER['REQUEST_URI'], '1'));
 
 
+if (!$core->validarSession()) {
+
+    if ($uri[1] == 'login') {
+        $restrito->login();
+    }
+    if ($uri[1] == 'logout') {
+        $restrito->logout();
+    }
+
+    $restrito->start();
+    exit;
+}
+
+
 switch ($uri[0]) {
     case 'home':
         $home->start();
@@ -86,7 +100,17 @@ switch ($uri[0]) {
         }
         break;
     case 'mensagens':
-        $mensagens->start();
+        switch ($uri[1]) {
+            case 'listar':
+                $mensagens->listar();
+                break;
+            case 'ver':
+                $mensagens->ver();
+                break;
+            case 'enviar':
+                $mensagens->enviar();
+                break;
+        }
         break;
     case 'clinica':
         if ($uri[1] == 'alterar') {

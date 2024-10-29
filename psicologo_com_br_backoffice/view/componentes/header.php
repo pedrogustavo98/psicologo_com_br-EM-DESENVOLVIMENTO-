@@ -54,7 +54,7 @@
                         </button>
                     </a>
 
-                    <a href="/mensagens">
+                    <a href="/mensagens/listar">
                         <button class="btn btn-primary m-1 d-flex justify-content-center <?php echo $mensagens ?>">
                             <i class="fa-solid fa-envelope"></i>
                             <div class="btn-titulo">Mensagens</div>

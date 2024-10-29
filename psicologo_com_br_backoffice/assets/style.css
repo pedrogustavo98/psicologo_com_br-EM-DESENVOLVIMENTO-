@@ -131,7 +131,7 @@ table tr {
 }
 
 table td {
-    width: 300px;
+    width: 300px !important;
 }
 
 .urgente {
@@ -213,4 +213,8 @@ img{
 
 table{
     width: 100%;
+}
+
+.campo-nome{
+    width: 300px;
 }
