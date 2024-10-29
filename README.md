@@ -2,6 +2,19 @@
 
 Este repositório contém o código-fonte de um sistema CRM e painel administrativo projetado para gerenciar uma clínica de psicologia. O sistema é uma plataforma completa e responsiva, com funcionalidades de agendamento de consultas, envio de mensagens, gerenciamento de conteúdo e controle financeiro. O objetivo principal é oferecer uma interface de fácil uso tanto para administradores quanto para psicólogos, permitindo uma organização eficiente e segura das informações da clínica.
 
+
+## Acessos
+- **PERFIL DONO DA CLÍNICA**:
+  E-mail: master@gmail.com
+  Senha: 979899
+
+  - **PERFIL PSICÓLOGO/FUNCIONÁRIO**:
+  E-mail: convidado@gmail.com
+  Senha: 979899
+
+
+
+
 ## Funcionalidades
 
 - **Painel Administrativo Completo**: Um painel administrativo responsivo para gerenciar todos os aspectos do site da clínica.
