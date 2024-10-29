@@ -37,4 +37,4 @@ Este repositório contém o código-fonte de um sistema CRM e painel administrat
 1. Clone este repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/pedrogustavo98/psicologo_com_br-EM-DESENVOLVIMENTO-.git
