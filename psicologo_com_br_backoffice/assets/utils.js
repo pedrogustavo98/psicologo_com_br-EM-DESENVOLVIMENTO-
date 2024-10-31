@@ -64,6 +64,22 @@ var maskCpfCnpj = function (val) {
  * @param {string} [icon='']
  * @param {string} [color='']
  */
+
+
+$('#imagem').on('change', function (event) {
+    const files = event.target.files[0];
+
+    if (files) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            document.getElementById("placeholder-image").src = e.target.result;
+        };
+
+        reader.readAsDataURL(files);
+    }
+})
+
 function toast(message, status = '', title = '', icon = '', color = '') {
     var titleColor, messageColor, iconColor, backgroundColor, progressBarColor = '';
 

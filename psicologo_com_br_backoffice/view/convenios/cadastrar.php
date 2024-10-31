@@ -28,17 +28,21 @@
 
                     <h5>Dados do convênio</h5>
 
-                    <div class="col-md-12" style="width: 200px;">
-                        <img src="https://placehold.jp/220x220.png">
+                 
+                    <div class="col-md-12 d-flex flex-column" style="width: 200px;">
+                        <label class="label-geral" for="imagem">
+                            <div>Imagem*</div>
+                            <img src="https://placehold.jp/220x220.png" id="placeholder-image" class="placeholderImage">
+                            <input type="file" class="form-control required text-capitalize required d-none" placeholder="Ex.: Anderson Silva" name="imagem" id="imagem">
+                        </label>
                     </div>
-
 
 
                     <div class="col-md-12 mt-5">
                         <label class="label-geral" for="nome">Nome do convênio*</label>
                         <input type="text" class="form-control required text-capitalize required campo-nome" placeholder="Ex.: Anderson Silva" name="nome" id="nome">
                     </div>
-                    
+
 
 
                 </div>
@@ -258,7 +262,4 @@
             }
         });
     });
-
-
-   
 </script>

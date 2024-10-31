@@ -55,99 +55,130 @@ class Core
                 $caminhosArquivos = [];
 
 
-                if ($_FILES['imagem'][0]) {
-                    foreach ($_FILES['imagem']['error'] as $key => $erro) {
-                        if ($erro === UPLOAD_ERR_OK) {
-                            $arquivoTemp = $_FILES['imagem']['tmp_name'][$key];
-                            $nomeArquivo = $_FILES['imagem']['name'][$key];
-                            $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+                if (!$_FILES['imagem'][0] && isset($_FILES['imagem'])) {
+                    if (isset($_FILES['imagem']) &&  $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
+                        $arquivoTemp = $_FILES['imagem']['tmp_name'];
+                        $nomeArquivo = $_FILES['imagem']['name'];
+                        $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
 
-                            $destino = 'uploads/';
+                        $destino = 'uploads/';
 
-                            if (!is_dir($destino)) {
-                                mkdir($destino, 0755, true);
-                            }
-
-                            $nomeAtualizado = md5($nomeArquivo . time()) . '.' . $extensao;
-                            $caminho = $destino . $nomeAtualizado;
-
-                            $tiposPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
-
-                            if (in_array($extensao, $tiposPermitidos)) {
-                                if (move_uploaded_file($arquivoTemp, $caminho)) {
-                                    $caminhosArquivos[] = $caminho;
-                                }
-                            } else {
-                                $this->return("error", 'Oops!', "Tipo de arquivo não permitido para: " . $nomeArquivo . ". Envie uma imagem JPG, JPEG, PNG ou GIF.");
-                            }
+                        if (!is_dir($destino)) {
+                            mkdir($destino, 0755, true);
                         }
-                    }
-                } else {
-                    if (count($_FILES['imagem']) > 1) {
-                        foreach ($_FILES['imagem']['error'] as $key => $file) {
 
-                            if (isset($_FILES['imagem']) &&  $file === UPLOAD_ERR_OK) {
-                                $arquivoTemp = $_FILES['imagem']['tmp_name'][$key];
-                                $nomeArquivo = $_FILES['imagem']['name'][$key];
-                                $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+                        $nomeAtualizado = md5($nomeArquivo) . '.' . $extensao;
+                        $caminho = $destino . $nomeAtualizado;
 
-                                $destino = 'uploads/';
-
-                                if (!is_dir($destino)) {
-                                    mkdir($destino, 0755, true);
-                                }
-
-                                $nomeAtualizado = md5($nomeArquivo) . '.' . $extensao;
-                                $caminho = $destino . $nomeAtualizado;
-
-                                $tiposPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
+                        $tiposPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
 
 
-                                if (in_array($extensao, $tiposPermitidos)) {
-                                    if (move_uploaded_file($arquivoTemp, $caminho)) {
-                                        return $caminho;
-                                    } else {
-                                        $this->return("error", 'Oops!', "Erro ao mover o arquivo para o destino.");
-                                    }
-                                } else {
-                                    $this->return("error", 'Oops!', "Tipo de arquivo não permitido. Por favor, envie uma imagem JPG, JPEG, PNG ou GIF.");
-                                }
-                            }
-                        }
-                    }
-
-                    
-                    if (count($_FILES['imagem']) == 1) {
-                        // pre('aqui');
-                        if (isset($_FILES['imagem']) &&  $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
-                            $arquivoTemp = $_FILES['imagem']['tmp_name'];
-                            $nomeArquivo = $_FILES['imagem']['name'];
-                            $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
-
-                            $destino = 'uploads/';
-
-                            if (!is_dir($destino)) {
-                                mkdir($destino, 0755, true);
-                            }
-
-                            $nomeAtualizado = md5($nomeArquivo) . '.' . $extensao;
-                            $caminho = $destino . $nomeAtualizado;
-
-                            $tiposPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
-
-
-                            if (in_array($extensao, $tiposPermitidos)) {
-                                if (move_uploaded_file($arquivoTemp, $caminho)) {
-                                    return $caminho;
-                                } else {
-                                    $this->return("error", 'Oops!', "Erro ao mover o arquivo para o destino.");
-                                }
+                        if (in_array($extensao, $tiposPermitidos)) {
+                            if (move_uploaded_file($arquivoTemp, $caminho)) {
+                                return $caminho;
                             } else {
-                                $this->return("error", 'Oops!', "Tipo de arquivo não permitido. Por favor, envie uma imagem JPG, JPEG, PNG ou GIF.");
+                                $this->return("error", 'Oops!', "Erro ao mover o arquivo para o destino.");
                             }
+                        } else {
+                            $this->return("error", 'Oops!', "Tipo de arquivo não permitido. Por favor, envie uma imagem JPG, JPEG, PNG ou GIF.");
                         }
                     }
                 }
+
+
+                // if ($_FILES['imagem'][0]) {
+                //     foreach ($_FILES['imagem']['error'] as $key => $erro) {
+                //         if ($erro === UPLOAD_ERR_OK) {
+                //             $arquivoTemp = $_FILES['imagem']['tmp_name'][$key];
+                //             $nomeArquivo = $_FILES['imagem']['name'][$key];
+                //             $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+
+                //             $destino = 'uploads/';
+
+                //             if (!is_dir($destino)) {
+                //                 mkdir($destino, 0755, true);
+                //             }
+
+                //             $nomeAtualizado = md5($nomeArquivo . time()) . '.' . $extensao;
+                //             $caminho = $destino . $nomeAtualizado;
+
+                //             $tiposPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
+
+                //             if (in_array($extensao, $tiposPermitidos)) {
+                //                 if (move_uploaded_file($arquivoTemp, $caminho)) {
+                //                     $caminhosArquivos[] = $caminho;
+                //                 }
+                //             } else {
+                //                 $this->return("error", 'Oops!', "Tipo de arquivo não permitido para: " . $nomeArquivo . ". Envie uma imagem JPG, JPEG, PNG ou GIF.");
+                //             }
+                //         }
+                //     }
+                // } else {
+                //     if (count($_FILES['imagem']) > 1) {
+                //         foreach ($_FILES['imagem']['error'] as $key => $file) {
+
+                //             if (isset($_FILES['imagem']) &&  $file === UPLOAD_ERR_OK) {
+                //                 $arquivoTemp = $_FILES['imagem']['tmp_name'][$key];
+                //                 $nomeArquivo = $_FILES['imagem']['name'][$key];
+                //                 $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+
+                //                 $destino = 'uploads/';
+
+                //                 if (!is_dir($destino)) {
+                //                     mkdir($destino, 0755, true);
+                //                 }
+
+                //                 $nomeAtualizado = md5($nomeArquivo) . '.' . $extensao;
+                //                 $caminho = $destino . $nomeAtualizado;
+
+                //                 $tiposPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
+
+
+                //                 if (in_array($extensao, $tiposPermitidos)) {
+                //                     if (move_uploaded_file($arquivoTemp, $caminho)) {
+                //                         return $caminho;
+                //                     } else {
+                //                         $this->return("error", 'Oops!', "Erro ao mover o arquivo para o destino.");
+                //                     }
+                //                 } else {
+                //                     $this->return("error", 'Oops!', "Tipo de arquivo não permitido. Por favor, envie uma imagem JPG, JPEG, PNG ou GIF.");
+                //                 }
+                //             }
+                //         }
+                //     }
+
+
+                //     if (count($_FILES['imagem']) == 1) {
+                //         // pre('aqui');
+                //         if (isset($_FILES['imagem']) &&  $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
+                //             $arquivoTemp = $_FILES['imagem']['tmp_name'];
+                //             $nomeArquivo = $_FILES['imagem']['name'];
+                //             $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+
+                //             $destino = 'uploads/';
+
+                //             if (!is_dir($destino)) {
+                //                 mkdir($destino, 0755, true);
+                //             }
+
+                //             $nomeAtualizado = md5($nomeArquivo) . '.' . $extensao;
+                //             $caminho = $destino . $nomeAtualizado;
+
+                //             $tiposPermitidos = ['jpg', 'jpeg', 'png', 'gif'];
+
+
+                //             if (in_array($extensao, $tiposPermitidos)) {
+                //                 if (move_uploaded_file($arquivoTemp, $caminho)) {
+                //                     return $caminho;
+                //                 } else {
+                //                     $this->return("error", 'Oops!', "Erro ao mover o arquivo para o destino.");
+                //                 }
+                //             } else {
+                //                 $this->return("error", 'Oops!', "Tipo de arquivo não permitido. Por favor, envie uma imagem JPG, JPEG, PNG ou GIF.");
+                //             }
+                //         }
+                //     }
+                // }
 
                 if (!empty($caminhosArquivos)) {
                     return $caminhosArquivos;

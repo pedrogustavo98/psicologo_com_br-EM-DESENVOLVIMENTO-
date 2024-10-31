@@ -13,8 +13,6 @@ Este repositório contém o código-fonte de um sistema CRM e painel administrat
   Senha: 979899
 
 
-
-
 ## Funcionalidades
 
 - **Painel Administrativo Completo**: Um painel administrativo responsivo para gerenciar todos os aspectos do site da clínica.

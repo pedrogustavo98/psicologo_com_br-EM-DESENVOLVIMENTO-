@@ -4,32 +4,44 @@ header('Content-Type: text/html; charset=utf-8');
 class QuemSomos
 {
     public $uri;
+    public $quemsomosModel;
+    public $core;
 
-    public function __construct($uri)
+    public function __construct($uri, $quemsomosModel, $core)
     {
         $this->uri = $uri;
+        $this->quemsomosModel = $quemsomosModel;
+        $this->core = $core;
     }
 
     public function cadastrar()
     {
-        // pre('aqui');
+        // $resultado = $this->quemsomosModel->buscarQuemSomos();
+        // pre($resultado);
     }
 
     public function start()
     {
-        // pre($_SESSION);
         $quemsomos = 'btn-light';
-        // pre('aqui');
-        // $teste = 1;
+
+        $qs = $this->quemsomosModel->buscarQuemSomos();
+        $resultado = $qs->fetchAll(PDO::FETCH_ASSOC)[0];
+
         require('../psicologo_com_br_backoffice/view/quemsomos/start.php');
     }
 
     public function salvar()
     {
+
         $quemsomos = 'btn-light';
 
-        // $teste = 1;
-        // require('../psicologo_com_br_backoffice/view/quemsomos/start.php');
+        $file = $this->core->uploadFiles();
+
+        $_POST['imagem'] = $file;
+
+        $salvar = $this->quemsomosModel->salvarQuemSomos($_POST);
+
+        $this->core->return('success', 'Oba!', 'Sua bio foi salva com sucesso!');
     }
 
 
