@@ -47,6 +47,23 @@ class Core
     }
 
 
+    public function uploadMoreFiles($files)
+    {
+
+        $result = [];
+        foreach ($files['name'] as $index => $name) {
+            $result[] = [
+                'name' => $name,
+                'type' => $files['type'][$index],
+                'tmp_name' => $files['tmp_name'][$index],
+                'error' => $files['error'][$index],
+                'size' => $files['size'][$index]
+            ];
+        }
+        return $result;
+    }
+
+
     public function uploadFiles()
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {

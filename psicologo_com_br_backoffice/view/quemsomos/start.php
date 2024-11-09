@@ -19,20 +19,20 @@
                     <div class="col-md-12 d-flex flex-column">
                         <label class="label-geral" for="imagem" style="width: 100px;">
                             <div>Imagem*</div>
-                            <img src="<?php echo $resultado['imagem'] == '' ? 'https://placehold.jp/2700x1000.png' : $resultado['imagem']?>" id="placeholder-image" class="placeholderImage">
+                            <img src="<?php echo $resultado['imagem'] == '' ? 'https://placehold.jp/2700x1000.png' : $resultado['imagem'] ?>" id="placeholder-image" class="placeholderImage">
                             <input type="file" class="form-control required text-capitalize required d-none" placeholder="Ex.: Anderson Silva" name="imagem" id="imagem">
                         </label>
                     </div>
                     <div class="col-md-12 mt-5">
                         <label class="label-geral" for="sobreposicao">Sobreposição*</label>
 
-                        <textarea maxlength="450" class="form-control required text-capitalize required" name="sobreposicao" id="sobreposicao"><?php echo $resultado['sobre_posicao']?></textarea>
+                        <textarea maxlength="450" class="form-control required text-capitalize required" name="sobreposicao" id="sobreposicao"><?php echo $resultado['sobre_posicao'] ?></textarea>
                     </div>
 
                     <div class="col-md-12 mt-5">
                         <label class="label-geral" for="texto-final">Texto Final*</label>
 
-                        <textarea maxlength="450" class="form-control required text-capitalize required" name="texto-final" id="texto-final"><?php echo $resultado['texto_final']?></textarea>
+                        <textarea maxlength="450" class="form-control required text-capitalize required" name="texto-final" id="texto-final"><?php echo $resultado['texto_final'] ?></textarea>
 
                     </div>
                     <!-- <div class="col-md-3">
@@ -73,7 +73,8 @@
 
 
             <div class="col-md-12 m-3 p-3 d-flex justify-content-end">
-                <button type="button" id="btn-gerar" class="btn btn-primary">Gerar</button>
+                <button type="button" id="btn-gerar" class="btn btn-primary">Salvar</button>
+                <button type="button" id="btn-alterar" class="btn btn-primary">Alterar</button>
             </div>
 
 
@@ -92,9 +93,20 @@
 
 
 <script>
-  
+    $('textarea, input').attr('disabled', true);
+    $('#btn-alterar').show();
+    $('#btn-gerar').hide();
+
+    $('#btn-alterar').on('click', function() {
+        $('#btn-gerar').show();
+        $('#btn-alterar').hide();
+        $('textarea, input').removeAttr('disabled', true);
+    })
+
 
     $('#btn-gerar').on('click', function() {
+
+
         $.ajax({
             url: '/quem-somos/salvar', // URL do arquivo PHP que processará a requisição
             type: 'POST',
@@ -113,7 +125,7 @@
                     icon: response.status
                 }).then(() => {
                     if (response.status == 'success') {
-                       location.reload();
+                        location.reload();
                     }
                 });
             },

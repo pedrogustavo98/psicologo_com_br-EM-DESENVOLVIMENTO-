@@ -1,7 +1,7 @@
 <?php
 $db = new Db();
 $core = new Core();
-$conveniosModel = new ConveniosModel($uri);
+$conveniosModel = new ConveniosModel($db->getConnection());
 $dashboardModel = new DashboardModel($uri);
 $homeModel = new HomeModel($uri);
 $mensagensModel = new MensagensModel($db->getConnection());

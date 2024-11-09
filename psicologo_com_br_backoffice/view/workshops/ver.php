@@ -53,6 +53,7 @@
 
                     </div>
 
+                    <input type="text" name="id" id="id" value="<?php echo $resultado['id']?>">
 
 
                     <div class="col-md-3 mt-5">
@@ -117,24 +118,24 @@
 
         var errors = 0;
 
-        $('.required').each(function(index, element) {
-            errors += validateEmpty(element.id);
-        });
+        // $('.required').each(function(index, element) {
+        //     errors += validateEmpty(element.id);
+        // });
 
 
-        if (errors > 0) {
-            Swal.fire({
-                title: 'Oops!',
-                text: 'Por favor, preencha os campos obrigatórios!',
-                icon: 'error'
-            });
+        // if (errors > 0) {
+        //     Swal.fire({
+        //         title: 'Oops!',
+        //         text: 'Por favor, preencha os campos obrigatórios!',
+        //         icon: 'error'
+        //     });
 
-            return;
-        }
+        //     return;
+        // }
 
 
         $.ajax({
-            url: '/workshops/salvar', // URL do arquivo PHP que processará a requisição
+            url: '/workshops/alterar', // URL do arquivo PHP que processará a requisição
             type: 'POST',
             async: false,
             cache: false,

@@ -28,17 +28,22 @@
 
                     <h5>Dados do convênio</h5>
 
-                    <div class="col-md-12">
-                        <img src="https://placehold.jp/220x220.png">
-                    </div>
+                    <input type="hidden" name="id" id="convenio_id" value="<?php echo $resultado['id']?>">
+                    <label for="imagem" class="label-geral" style="width: 250px;">
+                        <div class="img-container">
+                            <img class="m-2" id="img-preview" src="<?php echo $resultado['imagem'] == '' ? 'https://placehold.jp/2700x1000.png' : '/' . $resultado['imagem'] ?>">
 
+
+                            <input type="file" disabled class="form-control <?php echo $resultado['imagem'] == '' ? 'required' : '' ?> text-capitalize d-none" accept=".jpeg, .png, .jpg" onchange="previewImagem(event)" placeholder="Ex.: Anderson Silva" name="imagem" id="imagem">
+                        </div>
+                    </label>
 
 
                     <div class="col-md-12 mt-5">
                         <label class="label-geral" for="nome">Nome do convênio*</label>
-                        <input type="text" class="form-control required text-capitalize required" placeholder="Ex.: Anderson Silva" name="nome" id="nome">
+                        <input type="text" class="form-control required text-capitalize required" value="<?php echo $resultado['nome'] ?>" placeholder="Ex.: Anderson Silva" name="nome" id="nome">
                     </div>
-                    
+
 
 
                 </div>
@@ -46,7 +51,8 @@
 
 
             <div class="col-md-12 m-3 p-3 d-flex justify-content-end">
-                <button type="button" id="btn-gerar" class="btn btn-dark">Cadastrar</button>
+                <button type="button" id="btn-gerar" class="btn btn-dark">Salvar</button>
+                <button type="button" id="btn-alterar" class="btn btn-dark">Alterar</button>
             </div>
 
 
@@ -61,105 +67,14 @@
 
 
 <script>
-    $('#container-sv-app').hide();
-    $('#container-sv-site').hide();
-    $('#container-sv-pwa').hide();
-    $('#container-sv-painel').hide();
-    $('#container-investimento-pwa').hide();
-    $('#container-investimento-site').hide();
-    $('#container-investimento-app').hide();
+    $('textarea, input').attr('disabled', true);
+    $('#btn-alterar').show();
+    $('#btn-gerar').hide();
 
-    $('#funcionalidade-app').hide();
-    $('#funcionalidade-site').hide();
-    $('#funcionalidade-pwa').hide();
-    $('#funcionalidade-painel').hide();
-    $('#tecnologia-app').hide();
-    $('#tecnologia-site').hide();
-    $('#tecnologia-pwa').hide();
-    $('#tecnologia-painel').hide();
-
-
-
-    $('#sv-app').on('change', function() {
-        dado = $('#sv-app');
-
-        $('#container-sv-app').hide();
-        $('#container-investimento-app').hide();
-        $('#funcionalidade-app').hide();
-        $('#tecnologia-app').hide();
-        validarCamposSV('app', 'delete');
-
-
-        if (dado[0].checked) {
-            $('#container-sv-app').show();
-            $('#container-investimento-app').show();
-            $('#funcionalidade-app').show();
-            $('#tecnologia-app').show();
-            validarCamposSV('app', 'add');
-
-        }
-    })
-
-
-    $('#sv-site').on('change', function() {
-        dado = $('#sv-site');
-
-        $('#container-sv-site').hide();
-        $('#container-investimento-site').hide();
-        $('#funcionalidade-site').hide();
-        $('#tecnologia-site').hide();
-
-        validarCamposSV('site', 'delete');
-
-
-        if (dado[0].checked) {
-            $('#container-sv-site').show();
-            $('#container-investimento-site').show();
-            $('#funcionalidade-site').show();
-            $('#tecnologia-site').show();
-            validarCamposSV('site', 'add');
-        }
-    })
-
-
-    $('#sv-pwa').on('change', function() {
-        dado = $('#sv-pwa');
-
-        $('#container-sv-pwa').hide();
-        $('#container-investimento-pwa').hide();
-        $('#funcionalidade-pwa').hide();
-        $('#tecnologia-pwa').hide();
-        validarCamposSV('pwa', 'delete')
-
-        if (dado[0].checked) {
-            $('#container-sv-pwa').show();
-            $('#container-investimento-pwa').show();
-            $('#funcionalidade-pwa').show();
-            $('#tecnologia-pwa').show();
-            validarCamposSV('pwa', 'add')
-        }
-    })
-
-    $('#sv-painel').on('change', function() {
-        dado = $('#sv-painel');
-
-        $('#container-sv-painel').hide();
-        $('#container-investimento-painel').hide();
-        $('#funcionalidade-painel').hide();
-        $('#tecnologia-painel').hide();
-
-
-        validarCamposSV('painel', 'delete')
-
-
-        if (dado[0].checked) {
-            $('#container-sv-painel').show();
-            $('#container-investimento-painel').show();
-            $('#funcionalidade-painel').show();
-            $('#tecnologia-painel').show();
-
-            validarCamposSV('painel', 'add')
-        }
+    $('#btn-alterar').on('click', function() {
+        $('#btn-gerar').show();
+        $('#btn-alterar').hide();
+        $('textarea, input').removeAttr('disabled', true);
     })
 
 
@@ -187,7 +102,7 @@
 
 
         $.ajax({
-            url: '/?modulo=home&action=enviar', // URL do arquivo PHP que processará a requisição
+            url: '/convenios/alterar', // URL do arquivo PHP que processará a requisição
             type: 'POST',
             async: false,
             cache: false,
@@ -199,59 +114,13 @@
                 let dado = response;
 
                 Swal.fire({
-                    title: response.title,
-                    text: response.message,
+                    title: response.titulo,
+                    text: response.mensagem,
                     icon: response.status
                 }).then(() => {
-                    if (response.status == 'success') {
-                        $.ajax({
-                            url: '/?modulo=home&action=gerar', // URL do arquivo PHP que processará a requisição
-                            type: 'POST',
-                            async: false,
-                            cache: false,
-                            contentType: false,
-                            processData: false,
-                            dataType: 'html',
-                            data: new FormData(document.getElementById('form-gerar')),
-                            success: function(response) {
-                                console.log(response);
+                    location.reload();
+                })
 
-                                setTimeout(() => {
-                                    const opt = {
-                                        // margin: [0, 0, 10, 0], // Margens em mm [topo, esquerda, baixo, direita]
-                                        filename: 'document.pdf',
-                                        image: {
-                                            type: 'jpeg',
-                                            quality: 0.98
-                                        },
-                                        html2canvas: {
-                                            scale: 2,
-                                            logging: true,
-                                            dpi: 192,
-                                            letterRendering: true
-                                        },
-                                        jsPDF: {
-                                            unit: 'mm',
-                                            format: 'a4',
-                                            orientation: 'portrait'
-                                        },
-                                        pagebreak: {
-                                            mode: ['css', 'legacy'],
-                                            before: '.break-before',
-                                            after: '.break-after'
-                                        }
-                                    };
-
-                                    // Use html2pdf para gerar o PDF com as opções especificadas
-                                    html2pdf().from(response).set(opt).save();
-                                }, 500);
-
-
-
-                            }
-                        });
-                    }
-                });
             },
             error: function(xhr, status, error) { // Função de callback para erros
                 console.error('Erro na requisição AJAX:', error);
@@ -259,5 +128,16 @@
         });
     });
 
+    function previewImagem(event) {
+        const input = event.target;
+        const reader = new FileReader();
 
+        reader.onload = function(e) {
+            const imgPreview = document.getElementById(`img-preview`);
+            imgPreview.src = e.target.result;
+            imgPreview.style.display = 'block';
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
 </script>

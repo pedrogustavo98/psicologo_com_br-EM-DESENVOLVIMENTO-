@@ -59,8 +59,14 @@ switch ($uri[0]) {
             case 'cadastrar':
                 $convenios->cadastrar();
                 break;
+            case 'salvar':
+                $convenios->salvar();
+                break;
             case 'ver':
-                $convenios->ver();
+                $convenios->ver($uri[2]);
+                break;
+            case 'alterar':
+                $convenios->alterar();
                 break;
         }
         break;
@@ -77,6 +83,9 @@ switch ($uri[0]) {
                 break;
             case 'salvar':
                 $workshops->salvar();
+                break;
+            case 'alterar':
+                $workshops->alterar();
                 break;
         }
         break;

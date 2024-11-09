@@ -51,9 +51,9 @@ class WorkshopsModel
 
         $usuarioId = $_SESSION['usuario']['id'];
 
-        $stmt->bindParam(':imagem_um', $dados['imagem_um']);
-        $stmt->bindParam(':imagem_dois', $dados['imagem_dois']);
-        $stmt->bindParam(':imagem_tres', $dados['imagem_tres']);
+        $stmt->bindParam(':imagem_um', $dados['imagens'][0]);
+        $stmt->bindParam(':imagem_dois', $dados['imagens'][1]);
+        $stmt->bindParam(':imagem_tres', $dados['imagens'][2]);
         $stmt->bindParam(':nome_evento', $dados['nome']);
         $stmt->bindParam(':descricao', $dados['descricao']);
         $stmt->bindParam(':usuario_id', $usuarioId);
@@ -64,26 +64,72 @@ class WorkshopsModel
     }
 
 
-    public function alterarWorkshops($dados)
+    public function alterarWorkshop($dados)
     {
-        $query = "UPDATE profissionais SET nome = :nome, email = :email, senha = :senha, tipo = :tipo, registro = :registro, usuario_id = :usuario_id, imagem = :imagem WHERE id = :id";
+        $queryCriada = [];
 
+
+        if ($dados['imagens']) {
+            foreach ($dados['imagens'] as $key => $imagem) {
+                // pre($imagem);
+                if (!empty($dados['imagens']['imagem_um'])) {
+                    $queryCriada[] = 'imagem_um = :imagem_um';
+                }
+                if (!empty($dados['imagens']['imagem_dois'])) {
+                    $queryCriada[] = 'imagem_dois = :imagem_dois';
+                }
+                if (!empty($dados['imagens']['imagem_tres'])) {
+                    $queryCriada[] = 'imagem_tres = :imagem_tres';
+                }
+            }
+        }
+
+        if (!empty($dados['nome_evento'])) {
+            $queryCriada[] = 'nome_evento = :nome_evento';
+        }
+        if (!empty($dados['descricao'])) {
+            $queryCriada[] = 'descricao = :descricao';
+        }
+        if (!empty($dados['usuario_id'])) {
+            $queryCriada[] = 'usuario_id = :usuario_id';
+        }
+
+        if (empty($queryCriada)) {
+            return false;
+        }
+
+        $queryResultado = implode(', ', $queryCriada);
+
+        $query = "UPDATE workshops SET $queryResultado WHERE id = :id";
         $stmt = $this->db->prepare($query);
 
-        $senha = '';
-        $usuarioId = $_SESSION['usuario']['id'];
+        if (!empty($dados['imagem_um'])) {
+            $stmt->bindParam(':imagem_um', $dados['imagem_um']);
+        }
+        if (!empty($dados['imagem_dois'])) {
+            $stmt->bindParam(':imagem_dois', $dados['imagem_dois']);
+        }
+        if (!empty($dados['imagem_tres'])) {
+            $stmt->bindParam(':imagem_tres', $dados['imagem_tres']);
+        }
+        if (!empty($dados['nome_evento'])) {
+            $stmt->bindParam(':nome_evento', $dados['nome_evento']);
+        }
+        if (!empty($dados['descricao'])) {
+            $stmt->bindParam(':descricao', $dados['descricao']);
+        }
+        if (!empty($dados['usuario_id'])) {
+            $stmt->bindParam(':usuario_id', $dados['usuario_id']);
+        }
 
-        $stmt->bindParam(':nome', $dados['nome']);
-        $stmt->bindParam(':email', $dados['email']);
-        $stmt->bindParam(':senha', $senha);
-        $stmt->bindParam(':tipo', $dados['tipo']);
-        $stmt->bindParam(':registro', $dados['registro']);
-        $stmt->bindParam(':usuario_id', $usuarioId);
-        $stmt->bindParam(':imagem', $dados['imagem']);
-        $stmt->bindParam(':id', $dados['id']);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
-        $stmt->execute();
+        if (!$stmt->execute()) {
+            $errorInfo = $stmt->errorInfo();
+            echo "Erro ao atualizar: " . $errorInfo[2];
+            return false;
+        }
 
-        return $stmt;
+        return true;
     }
 }

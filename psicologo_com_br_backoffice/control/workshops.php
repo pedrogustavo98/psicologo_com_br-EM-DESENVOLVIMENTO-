@@ -42,27 +42,102 @@ class Workshops
 
         require('../psicologo_com_br_backoffice/view/workshops/listar.php');
     }
-    
+
     public function salvar()
     {
         $workshops = 'btn-light';
 
-        $file = $this->core->uploadFiles();
-      
-        $_POST['imagem_um'] = $file[0];
-        $_POST['imagem_dois'] = $file[1];
-        $_POST['imagem_tres'] = $file[2];
+
+        $imagens = $this->core->uploadMoreFiles($_FILES['imagem']);
+
+        $retorno = [];
+        foreach ($imagens as $imagem) {
+            $arquivoTemp = $imagem['tmp_name'];
+            $nomeArquivo = $imagem['name'];
+            $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+
+            $destino = 'uploads/';
+            $nomeAtualizado = md5($nomeArquivo) . '.' . $extensao;
+
+
+            $caminho = $destino . $nomeAtualizado;
+
+
+            if (move_uploaded_file($arquivoTemp, $caminho)) {
+                $retorno[] = $caminho;
+            } else {
+                $this->core->return("error", 'Oops!', "Erro ao mover o arquivo para o destino.");
+            }
+        }
+
+        $_POST['imagens'] = $retorno;
 
         $salvarProfissional = $this->workshopsModel->salvarWorkshops($_POST);
 
 
         $this->core->return('success', 'Oba!', 'Workshop salvo com sucesso!');
-    } 
+    }
+
+    public function alterar()
+    {
+        $imagens = $this->core->uploadMoreFiles($_FILES['imagem']);
+
+        $retorno = [];
+
+        foreach ($imagens as $key => $imagem) {
+
+            // Somente processa a imagem se ela foi enviada (size > 0)
+            if ($imagem['size'] > 0) {
+                // Define a coluna correta com base no índice
+                switch ($key) {
+                    case 0:
+                        $coluna = 'imagem_um';
+                        break;
+                    case 1:
+                        $coluna = 'imagem_dois';
+                        break;
+                    case 2:
+                        $coluna = 'imagem_tres';
+                        break;
+                    default:
+                        continue; // Caso inesperado, ignora
+                }
+
+                // Prepara informações do arquivo para upload
+                $arquivoTemp = $imagem['tmp_name'];
+                $nomeArquivo = $imagem['name'];
+                $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+                $destino = 'uploads/';
+                $nomeAtualizado = md5($nomeArquivo) . '.' . $extensao;
+
+                // Define o caminho e coluna para retorno
+                $caminho['caminho'] = $destino . $nomeAtualizado;
+                $caminho['coluna'] = $coluna;
+
+                // pre($caminho);
+                // Move o arquivo e verifica sucesso
+
+                pre(move_uploaded_file($arquivoTemp, $caminho['caminho']));
+                if (move_uploaded_file($arquivoTemp, $caminho['caminho'])) {
+                    $retorno[] = $caminho;
+                } else {
+                    pre(2);
+                    $this->core->return("error", 'Oops!', "Erro ao mover o arquivo para o destino.");
+                }
+            }
+        }
+
+        // Atualiza o array POST com as imagens processadas para o banco de dados
+        $_POST['imagens'] = $retorno;
+
+        // Salva o workshop com as imagens atualizadas
+        $salvarProfissional = $this->workshopsModel->alterarWorkshop($_POST);
+    }
+
 
     public function enviar()
     {
 
         echo json_encode(['status' => 'success', 'title' => 'Ooba!', 'message' => 'Proposta gerada com sucesso!', 'fileUrl' => 'output.pdf']);
     }
-
 }
